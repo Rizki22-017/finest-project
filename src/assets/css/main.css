@@ -359,6 +359,13 @@ h6 {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 
+  .navmenu ul li a.active {
+    color: var(--active-color); /* Warna atau gaya yang menunjukkan tautan aktif */
+    font-weight: bold;
+    /* Tambahkan efek lain yang diinginkan */
+  }
+  
+
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-dropdown-color);
@@ -1379,6 +1386,13 @@ section,
 .team .team-member .member-img {
   position: relative;
   overflow: hidden;
+}
+
+.team .team-member .member-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .team .team-member .social {

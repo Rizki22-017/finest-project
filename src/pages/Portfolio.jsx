@@ -41,7 +41,7 @@ export const Portfolio = () => {
                 <p className="mb-0 mt-3">Total Assets</p>
                 <h3><b>Rp. 500.000</b></h3>
                 
-                <p>Margin</p>
+                <p className="mb-0 mt-3">Margin</p>
                 <h3><b>Rp. 10.000</b></h3>
               </div>
             </div>

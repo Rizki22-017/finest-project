@@ -9,7 +9,7 @@ export const CatalogDetail = () => {
       <section id="catdet" className="catdet section">
         <div className="container d-flex flex-column justify-content-center align-items-center text-center position-relative">
           <img
-            src="assets/img/services.jpg"
+            src="assets/img/udang.png"
             className="img-fluid animated"
             alt=""
           />

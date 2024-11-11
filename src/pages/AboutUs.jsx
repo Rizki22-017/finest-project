@@ -26,13 +26,7 @@ export const AboutUs = () => {
                   <a href="#about" className="btn-get-started">
                     Get Started
                   </a>
-                  <a
-                    href="#"
-                    className="glightbox btn-watch-video d-flex align-items-center"
-                  >
-                    <i className="bi bi-play-circle" />
-                    <span>Watch Video</span>
-                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -122,7 +116,7 @@ export const AboutUs = () => {
                 <div className="team-member">
                   <div className="member-img">
                     <img
-                      src="assets/img/team/team-1.jpg"
+                      src="assets/img/narita.png"
                       className="img-fluid"
                       alt=""
                     />
@@ -152,7 +146,7 @@ export const AboutUs = () => {
                 <div className="team-member">
                   <div className="member-img">
                     <img
-                      src="assets/img/team/team-2.jpg"
+                      src="assets/img/soraya.png"
                       className="img-fluid"
                       alt=""
                     />
@@ -184,7 +178,7 @@ export const AboutUs = () => {
                 <div className="team-member">
                   <div className="member-img">
                     <img
-                      src="assets/img/team/team-3.jpg"
+                      src="assets/img/rafiqa.png"
                       className="img-fluid"
                       alt=""
                     />
@@ -214,7 +208,7 @@ export const AboutUs = () => {
                 <div className="team-member">
                   <div className="member-img">
                     <img
-                      src="assets/img/team/team-3.jpg"
+                      src="assets/img/zahra.png"
                       className="img-fluid"
                       alt=""
                     />
@@ -244,7 +238,7 @@ export const AboutUs = () => {
                 <div className="team-member">
                   <div className="member-img">
                     <img
-                      src="assets/img/team/team-3.jpg"
+                      src="assets/img/rizki.png"
                       className="img-fluid"
                       alt=""
                     />
@@ -274,7 +268,7 @@ export const AboutUs = () => {
                 <div className="team-member">
                   <div className="member-img">
                     <img
-                      src="assets/img/team/team-4.jpg"
+                      src="assets/img/risna.png"
                       className="img-fluid"
                       alt=""
                     />

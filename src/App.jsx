@@ -7,6 +7,7 @@ import { CatalogDetail } from './pages/CatalogDetail'
 import { Portfolio } from './pages/Portfolio'
 import { AboutUs } from './pages/AboutUs'
 import { FooterComponent } from './components/FooterComponent'
+import LoginForm from './pages/LoginForm'
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
         <Route path='/catalog-detail' element={<CatalogDetail/>}/>
         <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path='/about' element={<AboutUs/>}/>
+        <Route path='/login' element={<LoginForm/>}/>
       </Routes>
 
       <FooterComponent/>
