@@ -8,6 +8,10 @@ import { Portfolio } from './pages/Portfolio'
 import { AboutUs } from './pages/AboutUs'
 import { FooterComponent } from './components/FooterComponent'
 import LoginForm from './pages/LoginForm'
+import SignIn from './pages/SignIn'
+import Homepage from './pages/Homepage'
+
+
 
 function App() {
   
@@ -21,6 +25,8 @@ function App() {
         <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path='/about' element={<AboutUs/>}/>
         <Route path='/login' element={<LoginForm/>}/>
+        <Route path='/signin' element={<SignIn/>}/>
+        <Route path='/' element={<Homepage/>}/>
       </Routes>
 
       <FooterComponent/>
