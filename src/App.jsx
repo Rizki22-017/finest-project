@@ -10,6 +10,7 @@ import { FooterComponent } from './components/FooterComponent'
 import LoginForm from './pages/LoginForm'
 import SignIn from './pages/SignIn'
 import Homepage from './pages/Homepage'
+import { Role } from './pages/Role'
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/login' element={<LoginForm/>}/>
         <Route path='/signin' element={<SignIn/>}/>
         <Route path='/' element={<Homepage/>}/>
+        <Route path='/role' element={<Role/>} />
       </Routes>
 
       <FooterComponent/>

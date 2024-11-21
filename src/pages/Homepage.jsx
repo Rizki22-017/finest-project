@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Homepage = () => {
   return (
@@ -6,7 +6,7 @@ const Homepage = () => {
   <img src="assets/img/dashboard.jpg" alt=""  />
   <div className="container"  >
     <div className="row justify-content-start">
-      <div className="col-lg-8">
+      <div className="col-lg-8 container">
         <h2>Finest - Connecting You
         to Blue Economy Gains</h2>
         <p>With Finest, we create opportunities for people to use marine resources wisely. 
