@@ -11,6 +11,8 @@ import Homepage from "./pages/Homepage";
 import LoginFish from "./components/login/LoginFish"
 import { Role } from "./components/login/Role";
 import { Catalog } from "./pages/Catalog";
+import { Education } from "./pages/Education";
+import { EducationDetail } from "./pages/EducationDetail";
 
 function App() {
   const location = useLocation(); // Mendapatkan path URL saat ini
@@ -33,6 +35,8 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/role" element={<Role />} />
         <Route path="/catalog" element={<Catalog />} />
+        <Route path="/education" element={<Education />} />
+        <Route path="/education-detail" element={<EducationDetail />} />
       </Routes>
 
       {/* Tampilkan Footer jika bukan di halaman login/signin */}

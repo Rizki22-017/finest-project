@@ -1,11 +1,18 @@
-
+import { useEffect } from "react";
+import AOS from "aos";
 
 export const Portfolio = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <>
       <main className="main">
         {/* Page Title */}
-        <div className="page-title">
+        <div className="page-title" data-aos="zoom-out">
           <div className="container position-relative">
             <h1>Portfolio</h1>
             <p>

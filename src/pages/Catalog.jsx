@@ -64,10 +64,10 @@ export const Catalog = () => {
                 <div className="portfolio-info">
                   <h4>
                     <a href="/catalog-detail" title="More Details">
-                      App 1
+                      Shrimp Investment
                     </a>
                   </h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <p> <i className="fa-solid fa-store"/> OceanFresh</p>
                   <p style={{marginTop: '5px'}}><i className="fa-solid fa-star"/> 4.5</p>
                 </div>
               </div>
@@ -92,7 +92,7 @@ export const Catalog = () => {
                       Product 1
                     </a>
                   </h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <p> <i className="fa-solid fa-store"/> OceanFresh</p>
                   <p style={{marginTop: '5px'}}><i className="fa-solid fa-star"/> 4.5</p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export const Catalog = () => {
                       Branding 1
                     </a>
                   </h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <p> <i className="fa-solid fa-store"/> OceanFresh</p>
                   <p style={{marginTop: '5px'}}><i className="fa-solid fa-star"/> 4.5</p>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export const Catalog = () => {
                       Branding 1
                     </a>
                   </h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <p> <i className="fa-solid fa-store"/> OceanFresh</p>
                   <p style={{marginTop: '5px'}}><i className="fa-solid fa-star"/> 4.5</p>
                 </div>
               </div>
