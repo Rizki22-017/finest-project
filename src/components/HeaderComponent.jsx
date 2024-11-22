@@ -74,21 +74,21 @@ export const HeaderComponent = () => {
                     style={{ padding: "0", display: "inline-block" }}
                   >
                     <NavDropdown.Item
-                      href="#action/3.1"
+                      href="/login"
                       style={{ padding: "5px 10px", display: "block" }}
                     >
                       <i className="fa-solid fa-chart-line icon" style={{ marginRight: "10px" }} />
                       Investor
                     </NavDropdown.Item>
                     <NavDropdown.Item
-                      href="#action/3.2"
+                      href="/login"
                       style={{ padding: "5px 10px", display: "block" }}
                     >
                       <i className="fa-solid fa-fish icon" style={{ marginRight: "10px" }} />
                       Fish Farmers
                     </NavDropdown.Item>
                     <NavDropdown.Item
-                      href="#action/3.3"
+                      href="/login"
                       style={{ padding: "5px 10px", display: "block" }}
                     >
                       <i className="fa-solid fa-unlock-keyhole" style={{ marginRight: "10px" }} />

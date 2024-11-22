@@ -1,16 +1,29 @@
 
+import { useState} from "react";
+import { Breadcrumb, Modal } from "react-bootstrap";
+import { Role } from "../pages/Role";
 
 const LoginForm = () => {
+  const [showModal, setShowModal] = useState(false); // State untuk modal
+
+  
+
+  const handleCloseModal = () => setShowModal(false); // Menutup modal
+  const handleShowModal = () => setShowModal(true); // Menampilkan modal
   return (
     <div style={styles.container}>
       <div style={styles.imageSection}>
-      <img src="/assets/img/login.jpg" alt="Gambar Login" style={styles.image}></img>     
+      <img src="/assets/img/login.png" alt="Gambar Login" style={styles.image}></img>     
      </div>
       <div style={styles.formSection}>
         <h2 style={styles.title}>Log In</h2>
         <p style={styles.subtitle}>
           Welcome back to Finest! Please login to your account
         </p>
+        <Breadcrumb style={styles.breadcrumb}>
+              <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+              <Breadcrumb.Item active>Login</Breadcrumb.Item>
+        </Breadcrumb>
         <form style={styles.form}>
           <input type="email" placeholder="Email" style={styles.input} />
           <input type="password" placeholder="Password" style={styles.input} />
@@ -31,10 +44,22 @@ const LoginForm = () => {
           </button>
         </form>
         <p style={styles.footer}>
-          New User? <a href="#" style={styles.link}>Sign In</a>
+          New User? <a href="#" style={styles.link} onClick={handleShowModal}>Sign In</a>
         </p>
       </div>
-    </div>
+
+      <Modal className="modal-xl" show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Sign In</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Role/>
+        </Modal.Body>
+        <Modal.Footer>
+          <span>Choose your role first, then let&apos;s dive in!</span>
+        </Modal.Footer>
+      </Modal>    
+    </div>   
   );
 };
 
@@ -69,8 +94,12 @@ const styles = {
   },
   subtitle: {
     fontSize: '16px',
-    marginBottom: '30px',
+    marginBottom: 0,
     color: '#666',
+  },
+  breadcrumb: {
+    marginBottom: '0px',
+    fontSize: '14px',
   },
   form: {
     display: 'flex',
