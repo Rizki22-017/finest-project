@@ -1,11 +1,11 @@
-import React from "react";
+
 
 const SignUp = () => {
   return (
     <>
     <div className="signup-container">
         <div className="image-section">
-          <img src="/assets/img/login.jpg" alt="Boat on water" />
+          <img src="/assets/img/login.png" alt="Boat on water" />
         </div>
         <div className="form-section">
           <h1>Sign In</h1>

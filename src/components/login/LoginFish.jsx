@@ -1,7 +1,7 @@
 
 import { useState} from "react";
 import { Breadcrumb, Modal } from "react-bootstrap";
-import { Role } from "../pages/Role";
+import { Role } from "./Role";
 
 const LoginForm = () => {
   const [showModal, setShowModal] = useState(false); // State untuk modal
@@ -16,7 +16,7 @@ const LoginForm = () => {
       <img src="/assets/img/login.png" alt="Gambar Login" style={styles.image}></img>     
      </div>
       <div style={styles.formSection}>
-        <h2 style={styles.title}>Log In</h2>
+        <h2 style={styles.title}>Log In | Fish Farmers</h2>
         <p style={styles.subtitle}>
           Welcome back to Finest! Please login to your account
         </p>

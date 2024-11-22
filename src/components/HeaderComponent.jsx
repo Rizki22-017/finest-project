@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { NavDropdown, Modal } from "react-bootstrap";
-import { Role } from "../pages/Role";
+import { Role } from "./login/Role";
 
 export const HeaderComponent = () => {
   const location = useLocation();
@@ -53,10 +53,18 @@ export const HeaderComponent = () => {
                 </li>
                 <li>
                   <Link
-                    to="/catalog-detail"
-                    className={location.pathname === "/catalog-detail" ? "active" : ""}
+                    to="/catalog"
+                    className={location.pathname === "/catalog" ? "active" : ""}
                   >
                     Catalog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/education"
+                    className={location.pathname === "/education" ? "active" : ""}
+                  >
+                    Education
                   </Link>
                 </li>
                 <li>
@@ -81,7 +89,7 @@ export const HeaderComponent = () => {
                       Investor
                     </NavDropdown.Item>
                     <NavDropdown.Item
-                      href="/login"
+                      href="/login-fishfarmers"
                       style={{ padding: "5px 10px", display: "block" }}
                     >
                       <i className="fa-solid fa-fish icon" style={{ marginRight: "10px" }} />
