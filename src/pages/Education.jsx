@@ -11,7 +11,7 @@ export const Education = () => {
 
   return (
     <>
-      {/* Constructions Section */}
+      {/* Blog Section */}
       <section id="blog" className="blog section">
         {/* Section Title */}
         <div className="page-title" data-aos="zoom-out">

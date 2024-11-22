@@ -1,9 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { NavDropdown, Modal } from "react-bootstrap";
-import { Role } from "./login/Role";
+import { Role } from "../login/Role";
+import finestLogo from '../../assets/img/finest-logo.png';
 
-export const HeaderComponent = () => {
+export const HeaderSeller = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showModal, setShowModal] = useState(false); // State untuk modal
@@ -30,7 +31,7 @@ export const HeaderComponent = () => {
         <div className="branding d-flex align-items-center">
           <div className="container position-relative d-flex align-items-center justify-content-between">
             <a href="/" className="logo d-flex align-items-center">
-              <img src="assets/img/finest-logo.png" alt="Logo" />
+              <img src={finestLogo} alt="Logo" />
               <h1 className="sitename">Finest</h1>
             </a>
             <nav id="navmenu" className="navmenu">
@@ -45,70 +46,58 @@ export const HeaderComponent = () => {
                 </li>
                 <li>
                   <Link
-                    to="/portfolio"
-                    className={location.pathname === "/portfolio" ? "active" : ""}
+                    to="myproduct"
+                    className={location.pathname === "seller/myproduct" ? "active" : ""}
                   >
-                    Portfolio
+                    My Product
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/catalog"
-                    className={location.pathname === "/catalog" ? "active" : ""}
+                    to="order"
+                    className={location.pathname === "seller/order" ? "active" : ""}
                   >
-                    Catalog
+                    Order
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/education"
-                    className={location.pathname === "/education" ? "active" : ""}
+                    to="finance"
+                    className={location.pathname === "seller/finance" ? "active" : ""}
                   >
-                    Education
+                    Finance
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/about"
-                    className={location.pathname === "/about" ? "active" : ""}
+                    to="report"
+                    className={location.pathname === "seller/report" ? "active" : ""}
                   >
-                    About Us
+                    Report
                   </Link>
                 </li>
                 <li style={{ listStyle: "none", margin: "0", padding: "0" }}>
                   <NavDropdown
-                    title="Login as"
+                    title="Your Name"
                     id="collapsible-nav-dropdown"
                     style={{ padding: "0", display: "inline-block" }}
                   >
+                    
                     <NavDropdown.Item
-                      href="/login"
-                      style={{ padding: "5px 10px", display: "block" }}
-                    >
-                      <i className="fa-solid fa-chart-line icon" style={{ marginRight: "10px" }} />
-                      Investor
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      href="/login-fishfarmers"
+                      href="profile"
                       style={{ padding: "5px 10px", display: "block" }}
                     >
                       <i className="fa-solid fa-fish icon" style={{ marginRight: "10px" }} />
-                      Fish Farmers
+                      Show Profile
                     </NavDropdown.Item>
-                    <NavDropdown.Item
-                      href="/login"
-                      style={{ padding: "5px 10px", display: "block" }}
-                    >
-                      <i className="fa-solid fa-unlock-keyhole" style={{ marginRight: "10px" }} />
-                      Admin
-                    </NavDropdown.Item>
+                    
                     <NavDropdown.Divider />
                     <NavDropdown.Item
                       onClick={handleShowModal} // Menampilkan modal saat Sign In diklik
                       style={{ padding: "5px 10px", display: "block" }}
                     >
                       <i className="fa-solid fa-right-to-bracket" style={{ marginRight: "10px" }} />
-                      Sign In
+                      Log Out
                     </NavDropdown.Item>
                   </NavDropdown>
                 </li>

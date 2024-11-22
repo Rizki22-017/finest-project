@@ -13,6 +13,7 @@ import { Role } from "./components/login/Role";
 import { Catalog } from "./pages/Catalog";
 import { Education } from "./pages/Education";
 import { EducationDetail } from "./pages/EducationDetail";
+import { Seller } from "./Seller";
 
 function App() {
   const location = useLocation(); // Mendapatkan path URL saat ini
@@ -20,10 +21,13 @@ function App() {
   // Daftar route tanpa header dan footer
   const noHeaderFooterRoutes = ["/login", "/signin", "/login-fishfarmers"];
 
+  // Periksa apakah path saat ini adalah /seller/* atau tidak
+  const isSellerRoute = location.pathname.startsWith("/seller");
+
   return (
     <>
-      {/* Tampilkan Header jika bukan di halaman login/signin */}
-      {!noHeaderFooterRoutes.includes(location.pathname) && <HeaderComponent />}
+      {/* Tampilkan Header jika bukan di halaman login/signin atau seller */}
+      {!noHeaderFooterRoutes.includes(location.pathname) && !isSellerRoute && <HeaderComponent />}
 
       <Routes>
         <Route path="/catalog-detail" element={<CatalogDetail />} />
@@ -37,10 +41,11 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/education" element={<Education />} />
         <Route path="/education-detail" element={<EducationDetail />} />
+        <Route path="/seller/*" element={<Seller />} />
       </Routes>
 
-      {/* Tampilkan Footer jika bukan di halaman login/signin */}
-      {!noHeaderFooterRoutes.includes(location.pathname) && <FooterComponent />}
+      {/* Tampilkan Footer jika bukan di halaman login/signin atau seller */}
+      {!noHeaderFooterRoutes.includes(location.pathname) && !isSellerRoute && <FooterComponent />}
     </>
   );
 }
