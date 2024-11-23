@@ -17,7 +17,7 @@ export const Tab2 = () => {
                       aria-expanded="true"
                       aria-controls="collapseOne"
                     >
-                      Udang - Assa Group
+                      Shrimp - Assa Group
                     </button>
                   </h2>
                   <div

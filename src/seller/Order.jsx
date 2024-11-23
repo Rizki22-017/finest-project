@@ -45,7 +45,7 @@ export const Order = () => {
                   data-bs-toggle="tab"
                   data-bs-target="#features-tab-2"
                 >
-                  <h4>Order</h4>
+                  <h4>Fish Farmer</h4>
                 </a>
                 {/* End tab nav item */}
               </li>
