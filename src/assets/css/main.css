@@ -3197,3 +3197,200 @@ section,
   background: var(--background-color);
   border: 2px solid var(--accent-color);
 }
+
+/*--------------------------------------------------------------
+# Features Section
+--------------------------------------------------------------*/
+.order-contract .features-image {
+  position: relative;
+  min-height: 350px;
+}
+
+.order-contract .features-image img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  border-radius: 3%;
+}
+
+.order-contract .features-item h4 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.order-contract .features-item i {
+  font-size: 48px;
+  color: var(--accent-color);
+  margin-right: 20px;
+  line-height: 0;
+}
+
+.order-contract .features-item p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Prof Section
+--------------------------------------------------------------*/
+.prof .team-member {
+  background-color: var(--surface-color);
+  /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); */
+  position: relative;
+  border-radius: 5px;
+  transition: 0.5s;
+  padding-top: 30px;
+  height: 100%;
+}
+
+@media (max-width: 468px) {
+  .prof .team-member {
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+.prof .team-member .pic {
+  overflow: hidden;
+  width: 70px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 0px;
+}
+
+.prof .team-member .pic img {
+  transition: ease-in-out 0.3s;
+}
+
+.doctors .team-member:hover {
+  transform: translateY(-10px);
+}
+
+.prof .member-info {
+  padding-left: 15px;
+}
+
+
+@media (max-width: 468px) {
+  .prof .member-info {
+    padding: 30px 0 0 0;
+    text-align: center;
+  }
+}
+
+.prof .team-member h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.prof .team-member span {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 10px;
+  position: relative;
+  font-weight: 500;
+}
+
+.prof .team-member span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: color-mix(in srgb, var(--default-color), transparent 85%);
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 468px) {
+  .prof .team-member span::after {
+    left: calc(50% - 25px);
+  }
+}
+
+.prof .team-member p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+}
+
+.prof .team-member .social {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+@media (max-width: 468px) {
+  .prof .team-member .social {
+    justify-content: center;
+  }
+}
+
+.prof .team-member .social a {
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+}
+
+.prof .team-member .social a i {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+.prof .team-member .social a:hover {
+  background: var(--accent-color);
+}
+
+.prof .team-member .social a:hover i {
+  color: var(--contrast-color);
+}
+
+.prof .team-member .social a+a {
+  margin-left: 8px;
+}
+
+.order-contract .order-payment .card{
+  display: flex;
+  padding: 1.5rem;
+}
+
+.order-contract .order-payment .card p{
+  font-size: 17px;
+  font-weight: 600;
+}
+
+
+.order-contract .order-payment .send {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 2rem; 
+}
+
+
+.order-contract .order-payment .send a {
+  background-color: var(--heading-color);
+  color: var(--contrast-color);
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  border-radius: 5px; 
+  width: fit-content; 
+  min-width: 120px; 
+}

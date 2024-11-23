@@ -14,6 +14,7 @@ import { Catalog } from "./pages/Catalog";
 import { Education } from "./pages/Education";
 import { EducationDetail } from "./pages/EducationDetail";
 import { Seller } from "./Seller";
+import { Maintanance } from "./seller/Maintanance";
 
 function App() {
   const location = useLocation(); // Mendapatkan path URL saat ini
@@ -42,6 +43,7 @@ function App() {
         <Route path="/education" element={<Education />} />
         <Route path="/education-detail" element={<EducationDetail />} />
         <Route path="/seller/*" element={<Seller />} />
+        <Route path="/error" element={<Maintanance />} />
       </Routes>
 
       {/* Tampilkan Footer jika bukan di halaman login/signin atau seller */}

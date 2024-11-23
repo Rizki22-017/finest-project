@@ -46,7 +46,7 @@ export const HeaderSeller = () => {
                 </li>
                 <li>
                   <Link
-                    to="myproduct"
+                    to="error"
                     className={location.pathname === "seller/myproduct" ? "active" : ""}
                   >
                     My Product
@@ -70,7 +70,7 @@ export const HeaderSeller = () => {
                 </li>
                 <li>
                   <Link
-                    to="report"
+                    to="error"
                     className={location.pathname === "seller/report" ? "active" : ""}
                   >
                     Report
@@ -84,7 +84,7 @@ export const HeaderSeller = () => {
                   >
                     
                     <NavDropdown.Item
-                      href="profile"
+                      href="error"
                       style={{ padding: "5px 10px", display: "block" }}
                     >
                       <i className="fa-solid fa-fish icon" style={{ marginRight: "10px" }} />
