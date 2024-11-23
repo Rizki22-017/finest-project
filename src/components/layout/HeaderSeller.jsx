@@ -14,7 +14,7 @@ export const HeaderSeller = () => {
   };
 
   const handleCloseModal = () => setShowModal(false); // Menutup modal
-  const handleShowModal = () => setShowModal(true); // Menampilkan modal
+  // const handleShowModal = () => setShowModal(true); // Menampilkan modal
 
   useEffect(() => {
     // Menambahkan atau menghapus kelas .mobile-nav-active pada body sesuai dengan isMenuOpen
@@ -38,8 +38,8 @@ export const HeaderSeller = () => {
               <ul>
                 <li>
                   <Link
-                    to="/"
-                    className={location.pathname === "/" ? "active" : ""}
+                    to="dashboard"
+                    className={location.pathname === "seller/dashboard" ? "active" : ""}
                   >
                     Home
                   </Link>
@@ -93,8 +93,9 @@ export const HeaderSeller = () => {
                     
                     <NavDropdown.Divider />
                     <NavDropdown.Item
-                      onClick={handleShowModal} // Menampilkan modal saat Sign In diklik
+                      // onClick={handleShowModal} // Menampilkan modal saat Sign In diklik
                       style={{ padding: "5px 10px", display: "block" }}
+                      href="/"
                     >
                       <i className="fa-solid fa-right-to-bracket" style={{ marginRight: "10px" }} />
                       Log Out
