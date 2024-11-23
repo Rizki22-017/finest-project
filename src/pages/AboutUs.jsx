@@ -56,9 +56,6 @@ export const AboutUs = () => {
           </svg>
         </section>
 
-        <section className="gradasi">
-          
-        </section>
 
         <>
           {/* About Section */}

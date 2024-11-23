@@ -2780,7 +2780,7 @@ section,
 .about .wave3 use {
   animation: move-forever3 6s linear infinite;
   animation-delay: -2s;
-  fill: var(--accent-color);
+  fill: var(--background-color);
 }
 
 @keyframes move-forever1 {
