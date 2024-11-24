@@ -1335,6 +1335,7 @@ section,
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   height: 100%;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .portfolio .portfolio-content img {
@@ -1349,12 +1350,13 @@ section,
   padding: 25px 20px;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .portfolio .portfolio-content .portfolio-info h4 {
   font-size: 18px;
   font-weight: 600;
-  padding-right: 50px;
+  /* padding-right: 50px; */
 }
 
 .portfolio .portfolio-content .portfolio-info h4 a {
@@ -1370,6 +1372,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   font-size: 14px;
   margin-bottom: 0;
+  
 }
 
 .portfolio .portfolio-content:hover img {

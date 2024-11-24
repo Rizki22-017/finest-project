@@ -83,10 +83,10 @@ export const MyProduct = () => {
                         method="POST"
                         className="d-flex justify-content-center gap-2"
                       >
-                        <a className="btn btn-info" href="#">
+                        <a className="btn btn-primary" href="#">
                           View
                         </a>
-                        <a className="btn btn-primary" href="#">
+                        <a className="btn btn-warning" href="#">
                           Edit
                         </a>
                         <a className="btn btn-danger" href="#">
@@ -111,10 +111,10 @@ export const MyProduct = () => {
                         method="POST"
                         className="d-flex justify-content-center gap-2"
                       >
-                        <a className="btn btn-info" href="#">
+                        <a className="btn btn-primary" href="#">
                           View
                         </a>
-                        <a className="btn btn-primary" href="#">
+                        <a className="btn btn-warning" href="#">
                           Edit
                         </a>
                         <a className="btn btn-danger" href="#">

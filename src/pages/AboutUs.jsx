@@ -301,13 +301,13 @@ export const AboutUs = () => {
           {/* Section Title */}
           <div className="container section-title" >
             <h2>Get in Touch</h2>
-            <p>
+            <p style={{marginBottom:"30px"}}>
               <span>Need Help?</span>{" "}
               <span className="description-title">Want to speak to someone about your startup? We’d love to chat!</span>
             </p>
           </div>
           {/* End Section Title */}
-          <div className="container" >
+          <div className="container">
             <div className="row gy-4">
               <div className="col-lg-5">
                 <div className="info-wrap">
