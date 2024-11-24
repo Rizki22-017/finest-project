@@ -90,7 +90,7 @@ export const HeaderComponent = () => {
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       // href="/login-fishfarmers"
-                      href="/seller/"
+                      href="/seller/dashboard"
                       style={{ padding: "5px 10px", display: "block" }}
                     >
                       <i className="fa-solid fa-fish icon" style={{ marginRight: "10px" }} />

@@ -33,7 +33,7 @@ export const Dashboard = () => {
                 repellendus deleniti vel. Minus et tempore modi architecto.
               </p>
               <a
-                href="#about"
+                href="#features-details"
                 className="btn-get-started animate__animated animate__fadeInUp scrollto"
               >
                 Read More
