@@ -19,6 +19,7 @@ export const Dashboard = () => {
           data-bs-interval={5000}
           className="container carousel carousel-fade"
           data-bs-ride="carousel"
+          data-aos="fade-up"
         >
           {/* Slide 1 */}
           <div className="carousel-item active">
