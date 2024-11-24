@@ -39,14 +39,14 @@ export const HeaderSeller = () => {
                 <li>
                   <Link
                     to="dashboard"
-                    className={location.pathname === "seller/dashboard" ? "active" : ""}
+                    className={location.pathname === "dashboard" ? "active" : ""}
                   >
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="error"
+                    to="myproduct"
                     className={location.pathname === "seller/myproduct" ? "active" : ""}
                   >
                     My Product
