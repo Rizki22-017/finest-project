@@ -1,4 +1,20 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import { useState } from "react";
+import { Modal } from "react-bootstrap";
+import { AddData } from "./myproduct-data/AddData";
 export const MyProduct = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+  const [showModal, setShowModal] = useState(false); // State untuk modal
+
+  const handleCloseModal = () => setShowModal(false); // Menutup modal
+  const handleShowModal = () => setShowModal(true); // Menampilkan modal
+
   return (
     <>
       <section className="myproduct section">
@@ -7,7 +23,12 @@ export const MyProduct = () => {
           <h2>My Product</h2>
         </div>
         {/* End Section Title */}
-        <div className="col-12" id="databarang" data-aos="fade-up" data-aos-delay={100}>
+        <div
+          className="col-12"
+          id="databarang"
+          data-aos="fade-up"
+          data-aos-delay={100}
+        >
           <div
             className="card recent-sales overflow-auto"
             style={{ margin: "3rem" }}
@@ -27,6 +48,7 @@ export const MyProduct = () => {
                     className="btn btn-success"
                     href="#"
                     style={{ marginTop: "30px" }}
+                    onClick={handleShowModal}
                   >
                     Add data
                   </a>
@@ -110,6 +132,18 @@ export const MyProduct = () => {
           </div>
         </div>
       </section>
+
+      <Modal className="modal-xl" show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Data</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <AddData />
+        </Modal.Body>
+        <Modal.Footer>
+          <span>Add your data, then earn your money</span>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
