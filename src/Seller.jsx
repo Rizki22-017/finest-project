@@ -7,6 +7,7 @@ import { Order } from "./seller/Order"
 import { Maintanance } from "./seller/Maintanance"
 import { Dashboard } from "./seller/Dashboard"
 import { MyProduct } from "./seller/MyProduct"
+import { Report } from "./seller/Report"
 
 export const Seller = () => {
   return (
@@ -18,6 +19,7 @@ export const Seller = () => {
         <Route path="order" element={<Order/>}/>
         <Route path="dashboard" element={<Dashboard/>}/>
         <Route path="myproduct" element={<MyProduct/>}/>
+        <Route path="report" element={<Report/>}/>
 
         <Route path="/error" element={<Maintanance/>}/>
         </Routes>

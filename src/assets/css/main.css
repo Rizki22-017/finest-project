@@ -3901,3 +3901,179 @@ section,
 .features-details .features-item img {
   border-radius: 15px;
 }
+
+
+/*--------------------------------------------------------------
+# Report Section
+--------------------------------------------------------------*/
+.report .service-card {
+  height: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+
+.report .service-card:hover .icon {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.report .service-card:hover .read-more {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+.report .service-card .icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 30px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--accent-color);
+  font-size: 28px;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.report .service-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.report .service-card p {
+  margin-bottom: 25px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.report .service-card .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.report .service-card .read-more i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.report .service-card .read-more:hover i {
+  transform: translateX(5px);
+}
+
+
+/*--------------------------------------------------------------
+# Edit Report Section
+--------------------------------------------------------------*/
+.edit-report .info-wrap {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.edit-report .info-wrap img{
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 575px) {
+  .edit-report .info-wrap {
+    padding: 20px;
+  }
+}
+
+.edit-report .info-item {
+  margin-bottom: 40px;
+}
+
+.edit-report .info-item i {
+  font-size: 20px;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.edit-report .info-item h3 {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.edit-report .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.edit-report .info-item:hover i {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.edit-report .form-edit {
+  background-color: var(--surface-color);
+  height: 100%;
+  padding: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 575px) {
+  .edit-report .form-edit {
+    padding: 20px;
+  }
+}
+
+.edit-report .form-edit input[type=text],
+.edit-report .form-edit input[type=email],
+.edit-report .form-edit textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.edit-report .form-edit input[type=text]:focus,
+.edit-report .form-edit input[type=email]:focus,
+.edit-report .form-edit textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.edit-report .form-edit input[type=text]::placeholder,
+.edit-report .form-edit input[type=email]::placeholder,
+.edit-report .form-edit textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
+}
+
+.edit-report .form-edit button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.edit-report .form-edit button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+}

@@ -64,7 +64,7 @@ export const HeaderComponent = () => {
                     to="/education"
                     className={location.pathname === "/education" ? "active" : ""}
                   >
-                    Education
+                    Article
                   </Link>
                 </li>
                 <li>

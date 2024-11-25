@@ -83,9 +83,9 @@ export const MyProduct = () => {
                         method="POST"
                         className="d-flex justify-content-center gap-2"
                       >
-                        <a className="btn btn-primary" href="#">
+                        {/* <a className="btn btn-primary" href="#">
                           View
-                        </a>
+                        </a> */}
                         <a className="btn btn-warning" href="#">
                           Edit
                         </a>
@@ -111,9 +111,9 @@ export const MyProduct = () => {
                         method="POST"
                         className="d-flex justify-content-center gap-2"
                       >
-                        <a className="btn btn-primary" href="#">
+                        {/* <a className="btn btn-primary" href="#">
                           View
-                        </a>
+                        </a> */}
                         <a className="btn btn-warning" href="#">
                           Edit
                         </a>

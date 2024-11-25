@@ -70,7 +70,7 @@ export const HeaderSeller = () => {
                 </li>
                 <li>
                   <Link
-                    to="error"
+                    to="report"
                     className={location.pathname === "seller/report" ? "active" : ""}
                   >
                     Report
