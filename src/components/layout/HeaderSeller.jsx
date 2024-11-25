@@ -84,7 +84,7 @@ export const HeaderSeller = () => {
                   >
                     
                     <NavDropdown.Item
-                      href="error"
+                      href="profile"
                       style={{ padding: "5px 10px", display: "block" }}
                     >
                       <i className="fa-solid fa-fish icon" style={{ marginRight: "10px" }} />
