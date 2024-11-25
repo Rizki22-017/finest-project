@@ -1208,10 +1208,13 @@ section,
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 100px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   border-radius: 50%;
   border: 6px solid color-mix(in srgb, var(--default-color), transparent 85%);
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 .testimonials .testimonial-item h3 {
@@ -1852,28 +1855,24 @@ section,
 --------------------------------------------------------------*/
 .pricing .pricing-item {
   background-color: var(--surface-color);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  box-shadow: 0px 5px 90px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
 }
 
 .pricing .pricing-item h3 {
-  font-weight: 400;
-  margin: -20px -20px 20px -20px;
-  padding: 20px 15px;
-  font-size: 16px;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 20px;
   font-weight: 600;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  background: color-mix(in srgb, var(--default-color), transparent 95%);
 }
 
-.pricing .pricing-item h4 {
-  font-size: 36px;
-  font-weight: 600;
-  font-family: var(--heading-font);
+.pricing .pricing-item i {
+  color: var(--accent-color);
+  font-size: 100px;
 }
 
 .pricing .pricing-item h4 sup {
@@ -1889,7 +1888,7 @@ section,
 }
 
 .pricing .pricing-item ul {
-  padding: 15px 0;
+  padding: 20px 0;
   list-style: none;
   text-align: center;
   line-height: 20px;
@@ -1900,58 +1899,55 @@ section,
   padding-bottom: 16px;
 }
 
-.pricing .pricing-item ul i {
-  color: var(--accent-color);
-  font-size: 18px;
-  padding-right: 4px;
-}
-
 .pricing .pricing-item ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
   text-decoration: line-through;
 }
 
-.pricing .btn-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 95%);
-  margin: 0 -20px -20px -20px;
-  padding: 20px 15px;
+.pricing .pricing-item .btn-wrap {
+  padding: 15px;
   text-align: center;
 }
 
-.pricing .btn-buy {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+.pricing .pricing-item .btn-buy {
+  color: var(--accent-color);
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
   display: inline-block;
-  padding: 8px 35px 10px 35px;
-  border-radius: 4px;
-  transition: none;
+  padding: 10px 40px 12px 40px;
+  border-radius: 50px;
   font-size: 14px;
-  font-weight: 400;
   font-family: var(--heading-font);
   font-weight: 600;
   transition: 0.3s;
 }
 
-.pricing .btn-buy:hover {
+.pricing .pricing-item .btn-buy:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pricing .recommended .btn-buy {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pricing .recommended .btn-buy:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-.pricing .featured h3 {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.pricing .advanced {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  width: 200px;
+.pricing .recommended-badge {
   position: absolute;
-  top: 18px;
-  right: -68px;
-  transform: rotate(45deg);
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
-  font-size: 14px;
-  padding: 1px 0 3px 0;
+  font-size: 13px;
+  padding: 3px 25px 6px 25px;
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  color: var(--accent-color);
+  border-radius: 50px;
 }
 
 /*--------------------------------------------------------------
@@ -4133,3 +4129,262 @@ section,
 .profile .profile-edit img {
   max-width: 120px;
 }
+
+
+/*--------------------------------------------------------------
+# Hero-Home Section
+--------------------------------------------------------------*/
+.hero-home {
+  width: 100%;
+  min-height: 70vh;
+  position: relative;
+  padding: 120px 0 120px 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-home .hero-bg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-home:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 35%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero-home .container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-home h1 {
+  margin: 0 0 20px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: var(--contrast-color);
+}
+
+.hero-home p {
+  color: var(--contrast-color);
+  margin: 5px 0 30px 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.hero-home .btn-get-started {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 28px 12px 28px;
+  border-radius: 15px;
+  transition: 0.5s;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.hero-home .btn-get-started:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.hero-home .btn-watch-video {
+  font-size: 16px;
+  transition: 0.5s;
+  margin-left: 25px;
+  color: var(--default-color);
+  font-weight: 600;
+}
+
+.hero-home .btn-watch-video i {
+  color: var(--accent-color);
+  font-size: 32px;
+  transition: 0.3s;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+.hero-home .btn-watch-video:hover {
+  color: var(--accent-color);
+}
+
+.hero-home .btn-watch-video:hover i {
+  color: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+.hero-home .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (max-width: 640px) {
+  .hero-home h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .hero-home p {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  .hero-home .btn-get-started,
+  .hero-home .btn-watch-video {
+    font-size: 13px;
+  }
+}
+
+.hero-home .hero-waves {
+  display: block;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.hero-home .wave1 use {
+  animation: move-forever1 10s linear infinite;
+  animation-delay: -2s;
+  fill: var(--default-color);
+  opacity: 0.6;
+}
+
+.hero-home .wave2 use {
+  animation: move-forever2 8s linear infinite;
+  animation-delay: -2s;
+  fill: var(--default-color);
+  opacity: 0.4;
+}
+
+.hero-home .wave3 use {
+  animation: move-forever3 6s linear infinite;
+  animation-delay: -2s;
+  fill: var(--default-color);
+}
+
+@keyframes move-forever1 {
+  0% {
+    transform: translate(85px, 0%);
+  }
+
+  100% {
+    transform: translate(-90px, 0%);
+  }
+}
+
+@keyframes move-forever2 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+@keyframes move-forever3 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/*--------------------------------------------------------------
+# Features Cards Section
+--------------------------------------------------------------*/
+.features-cards {
+  --default-color: #555;
+  --heading-color: #333;
+}
+
+.features-cards .feature-box {
+  height: 100%;
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+
+.features-cards .feature-box i {
+  font-size: 44px;
+  display: inline-block;
+  line-height: 0;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.features-cards .feature-box h4 {
+  font-size: 25px;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+}
+
+.features-cards .feature-box p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.features-cards .feature-box.orange {
+  background-color: #fff3e2;
+}
+
+.features-cards .feature-box.orange i {
+  color: #edb86e;
+}
+
+.features-cards .feature-box.blue {
+  background-color: #deedfd;
+}
+
+.features-cards .feature-box.blue i {
+  color: #20a5f8;
+}
+
+.features-cards .feature-box.green {
+  background-color: #d5f1e4;
+}
+
+.features-cards .feature-box.green i {
+  color: #48c88a;
+}
+
+.features-cards .feature-box.red {
+  background-color: #fdeded;
+}
+
+.features-cards .feature-box.red i {
+  color: #f28484;
+}
+
+.features-cards .feature-box {
+  height: 230px;
+  text-align: center;
+}
+

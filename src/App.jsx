@@ -15,6 +15,7 @@ import { Education } from "./pages/Education";
 import { EducationDetail } from "./pages/EducationDetail";
 import { Seller } from "./Seller";
 import { Maintanance } from "./seller/Maintanance";
+import { Home } from "./pages/Home";
 
 function App() {
   const location = useLocation(); // Mendapatkan path URL saat ini
@@ -37,7 +38,7 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/login-fishfarmers" element={<LoginFish />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/role" element={<Role />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/education" element={<Education />} />
