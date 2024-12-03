@@ -14,38 +14,47 @@ export const Catalog = () => {
       {/* Portfolio Section */}
       <section id="portfolio" className="portfolio section">
         {/* Section Title */}
-        <div className="page-title" data-aos="zoom-out">
-            <div className="container position-relative">
-                <h1>Catalog Product</h1>
-                <p>
-                Esse dolorum voluptatum ullam est sint nemo et est ipsa porro
-                placeat quibusdam quia assumenda numquam molestias.
-                </p>
-                <nav className="breadcrumbs">
-                <ol>
-                    <li>
-                    <a href="/">Home</a>
-                    </li>
-                    <li className="current">Catalog Product</li>
-                </ol>
-                </nav>
-            </div>
+        <div
+          className="page-title dark-background"
+          data-aos="zoom-out"
+          style={{ backgroundImage: "url(assets/img/dashboard.jpg)" }}
+        >
+          <div className="container position-relative">
+            <h1>Catalog Product</h1>
+            <p>
+              Esse dolorum voluptatum ullam est sint nemo et est ipsa porro
+              placeat quibusdam quia assumenda numquam molestias.
+            </p>
+            <nav className="breadcrumbs">
+              <ol>
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li className="current">Catalog Product</li>
+              </ol>
+            </nav>
+          </div>
         </div>
-        {/* End Section Title */}
+        {/* End Page Title */}
         <div className="container">
-            <form className="search-form d-flex flex-grow-1" role="search" style={{marginBottom: '25px'}} data-aos="fade-up">
-                <div className="input-group search-input-group">
-                    <span className="input-group-text search-icon">
-                    <i className="bi bi-search" />
-                    </span>
-                    <input
-                    className="form-control roboto-font search-input"
-                    type="search"
-                    placeholder="Marina Fresh"
-                    aria-label="Search"
-                    />
-                </div>
-            </form>
+          <form
+            className="search-form d-flex flex-grow-1"
+            role="search"
+            style={{ marginBottom: "25px" }}
+            data-aos="fade-up"
+          >
+            <div className="input-group search-input-group">
+              <span className="input-group-text search-icon">
+                <i className="bi bi-search" />
+              </span>
+              <input
+                className="form-control roboto-font search-input"
+                type="search"
+                placeholder="Marina Fresh"
+                aria-label="Search"
+              />
+            </div>
+          </form>
           <div className="row gy-4" data-aos="fade-up">
             {/* Portfolio Item */}
             <div className="col-lg-3 col-md-6 portfolio-item">
@@ -67,8 +76,13 @@ export const Catalog = () => {
                       Shrimp Investment
                     </a>
                   </h4>
-                  <p> <i className="fa-solid fa-store"/> OceanFresh</p>
-                  <p style={{marginTop: '5px'}}><i className="fa-solid fa-star"/> 4.5</p>
+                  <p>
+                    {" "}
+                    <i className="fa-solid fa-store" /> OceanFresh
+                  </p>
+                  <p style={{ marginTop: "5px" }}>
+                    <i className="fa-solid fa-star" /> 4.5
+                  </p>
                 </div>
               </div>
             </div>
@@ -92,8 +106,13 @@ export const Catalog = () => {
                       Product 1
                     </a>
                   </h4>
-                  <p> <i className="fa-solid fa-store"/> OceanFresh</p>
-                  <p style={{marginTop: '5px'}}><i className="fa-solid fa-star"/> 4.5</p>
+                  <p>
+                    {" "}
+                    <i className="fa-solid fa-store" /> OceanFresh
+                  </p>
+                  <p style={{ marginTop: "5px" }}>
+                    <i className="fa-solid fa-star" /> 4.5
+                  </p>
                 </div>
               </div>
             </div>
@@ -117,8 +136,13 @@ export const Catalog = () => {
                       Branding 1
                     </a>
                   </h4>
-                  <p> <i className="fa-solid fa-store"/> OceanFresh</p>
-                  <p style={{marginTop: '5px'}}><i className="fa-solid fa-star"/> 4.5</p>
+                  <p>
+                    {" "}
+                    <i className="fa-solid fa-store" /> OceanFresh
+                  </p>
+                  <p style={{ marginTop: "5px" }}>
+                    <i className="fa-solid fa-star" /> 4.5
+                  </p>
                 </div>
               </div>
             </div>
@@ -142,8 +166,13 @@ export const Catalog = () => {
                       Branding 1
                     </a>
                   </h4>
-                  <p> <i className="fa-solid fa-store"/> OceanFresh</p>
-                  <p style={{marginTop: '5px'}}><i className="fa-solid fa-star"/> 4.5</p>
+                  <p>
+                    {" "}
+                    <i className="fa-solid fa-store" /> OceanFresh
+                  </p>
+                  <p style={{ marginTop: "5px" }}>
+                    <i className="fa-solid fa-star" /> 4.5
+                  </p>
                 </div>
               </div>
             </div>

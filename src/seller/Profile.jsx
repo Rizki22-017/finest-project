@@ -13,7 +13,7 @@ export const Profile = () => {
     
     <section className="section profile container" >
       <div className="container section-title" data-aos="fade-up">
-          <h2>Finance</h2>
+          <h2>Profile</h2>
           
         </div>
   <div className="row" style={{padding:"15px"}}>

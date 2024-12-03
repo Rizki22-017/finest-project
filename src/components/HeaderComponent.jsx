@@ -45,18 +45,18 @@ export const HeaderComponent = () => {
                 </li>
                 <li>
                   <Link
-                    to="/portfolio"
-                    className={location.pathname === "/portfolio" ? "active" : ""}
-                  >
-                    Portfolio
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to="/catalog"
                     className={location.pathname === "/catalog" ? "active" : ""}
                   >
                     Catalog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/portfolio"
+                    className={location.pathname === "/portfolio" ? "active" : ""}
+                  >
+                    Portfolio
                   </Link>
                 </li>
                 <li>

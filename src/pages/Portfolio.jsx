@@ -11,8 +11,12 @@ export const Portfolio = () => {
   return (
     <>
       <main className="main">
-        {/* Page Title */}
-        <div className="page-title" data-aos="zoom-out">
+        {/* Section Title */}
+        <div
+          className="page-title dark-background"
+          data-aos="zoom-out"
+          style={{ backgroundImage: "url(assets/img/dashboard.jpg)" }}
+        >
           <div className="container position-relative">
             <h1>Portfolio</h1>
             <p>

@@ -11,8 +11,8 @@ export const Home = () => {
     <>
       {/* Hero Section */}
       <section id="hero-home" className="hero-home section dark-background">
-        <img src="/assets/img/home.png" alt="" className="hero-bg" />
-        <div className="container">
+        <img src="/assets/img/home.png" alt="" className="hero-bg" data-aos="zoom-out"/>
+        <div className="container" data-aos="zoom-out">
           <div className="row gy-4 justify-content-between">
             <div
               className="col-lg-6  d-flex flex-column justify-content-center"

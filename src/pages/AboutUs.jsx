@@ -3,7 +3,7 @@ export const AboutUs = () => {
     <>
       <>
         {/* about Section */}
-        <section id="about" className="about section ">
+        <section id="about" className="about section " data-aos="zoom-out">
           <img src="assets/img/hero-bg.jpg" alt="" className="about-bg" />
           <div className="container">
             <div className="row gy-4 justify-content-between">

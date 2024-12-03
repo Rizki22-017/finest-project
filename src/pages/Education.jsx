@@ -14,9 +14,13 @@ export const Education = () => {
       {/* Blog Section */}
       <section id="blog" className="blog section">
         {/* Section Title */}
-        <div className="page-title" data-aos="zoom-out">
+        <div
+          className="page-title dark-background"
+          data-aos="zoom-out"
+          style={{ backgroundImage: "url(assets/img/dashboard.jpg)" }}
+        >
           <div className="container position-relative">
-            <h1>Education</h1>
+            <h1>Article</h1>
             <p>
               Esse dolorum voluptatum ullam est sint nemo et est ipsa porro
               placeat quibusdam quia assumenda numquam molestias.
@@ -26,12 +30,12 @@ export const Education = () => {
                 <li>
                   <a href="/">Home</a>
                 </li>
-                <li className="current">Education</li>
+                <li className="current">Article</li>
               </ol>
             </nav>
           </div>
         </div>
-        {/* End Section Title */}
+        {/* End Page Title */}
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay={100}>
