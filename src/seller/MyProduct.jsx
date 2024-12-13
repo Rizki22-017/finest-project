@@ -135,13 +135,13 @@ export const MyProduct = () => {
 
       <Modal className="modal-xl" show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Data</Modal.Title>
+          <Modal.Title>Tambahkan data</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddData />
+          <AddData handleCloseModal={handleCloseModal} />
         </Modal.Body>
         <Modal.Footer>
-          <span>Add your data, then earn your money</span>
+          <span>Tambahkan data produk kamu, biarkan uang mengalir kepadamu</span>
         </Modal.Footer>
       </Modal>
     </>
