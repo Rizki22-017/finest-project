@@ -65,7 +65,7 @@ export const Catalog = () => {
                   className="glightbox"
                 >
                   <img
-                    src="assets/img/portfolio/app-1.jpg"
+                    src="assets/img/2.png"
                     className="img-fluid"
                     alt=""
                   />
@@ -95,7 +95,7 @@ export const Catalog = () => {
                   className="glightbox"
                 >
                   <img
-                    src="assets/img/portfolio/product-1.jpg"
+                    src="assets/img/1.png"
                     className="img-fluid"
                     alt=""
                   />
@@ -125,7 +125,7 @@ export const Catalog = () => {
                   className="glightbox"
                 >
                   <img
-                    src="assets/img/portfolio/branding-1.jpg"
+                    src="assets/img/3.png"
                     className="img-fluid"
                     alt=""
                   />
@@ -155,7 +155,7 @@ export const Catalog = () => {
                   className="glightbox"
                 >
                   <img
-                    src="assets/img/portfolio/branding-1.jpg"
+                    src="assets/img/4.png"
                     className="img-fluid"
                     alt=""
                   />

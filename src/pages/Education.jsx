@@ -42,7 +42,7 @@ export const Education = () => {
               <div className="team-member d-flex align-items-start">
                 <div className="pic">
                   <img
-                    src="assets/img/team/team-1.jpg"
+                    src="assets/img/1.png"
                     className="img-fluid"
                     alt=""
                   />
@@ -74,7 +74,7 @@ export const Education = () => {
               <div className="team-member d-flex align-items-start">
                 <div className="pic">
                   <img
-                    src="assets/img/team/team-2.jpg"
+                    src="assets/img/2.png"
                     className="img-fluid"
                     alt=""
                   />
@@ -113,7 +113,7 @@ export const Education = () => {
                 <a href="/education-detail">
                 <div className="post-img">
                   <img
-                    src="assets/img/portfolio/app-1.jpg"
+                    src="assets/img/3.png"
                     alt=""
                     className="img-fluid"
                   />
@@ -142,7 +142,7 @@ export const Education = () => {
                 <a href="/education-detail">
                 <div className="post-img">
                   <img
-                    src="assets/img/portfolio/app-1.jpg"
+                    src="assets/img/4.png"
                     alt=""
                     className="img-fluid"
                   />
@@ -171,7 +171,7 @@ export const Education = () => {
                 <a href="/education-detail">
                 <div className="post-img">
                   <img
-                    src="assets/img/portfolio/app-1.jpg"
+                    src="assets/img/1.png"
                     alt=""
                     className="img-fluid"
                   />
@@ -200,7 +200,7 @@ export const Education = () => {
                 <a href="/education-detail">
                 <div className="post-img">
                   <img
-                    src="assets/img/portfolio/app-1.jpg"
+                    src="assets/img/2.png"
                     alt=""
                     className="img-fluid"
                   />
@@ -229,7 +229,7 @@ export const Education = () => {
                 <a href="/education-detail">
                 <div className="post-img">
                   <img
-                    src="assets/img/portfolio/app-1.jpg"
+                    src="assets/img/3.png"
                     alt=""
                     className="img-fluid"
                   />
@@ -258,7 +258,7 @@ export const Education = () => {
                 <a href="/education-detail">
                 <div className="post-img">
                   <img
-                    src="assets/img/portfolio/app-1.jpg"
+                    src="assets/img/4.png"
                     alt=""
                     className="img-fluid"
                   />
@@ -287,7 +287,7 @@ export const Education = () => {
                 <a href="/education-detail">
                 <div className="post-img">
                   <img
-                    src="assets/img/portfolio/app-1.jpg"
+                    src="assets/img/1.png"
                     alt=""
                     className="img-fluid"
                   />
@@ -316,7 +316,7 @@ export const Education = () => {
                 <a href="/education-detail">
                 <div className="post-img">
                   <img
-                    src="assets/img/portfolio/app-1.jpg"
+                    src="assets/img/2.png"
                     alt=""
                     className="img-fluid"
                   />
