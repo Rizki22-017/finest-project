@@ -12,7 +12,7 @@ const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    
+  
     const response = await fetch("http://localhost:3000/api/v1/login", {
       method: "POST",
       headers: {
@@ -20,17 +20,18 @@ const LoginForm = () => {
       },
       body: JSON.stringify({ email, password }),
     });
-
+  
     const data = await response.json();
-
+  
     if (response.ok) {
-      const { token } = data;
+      const { token, first_name } = data; // Ambil first_name dari respons
       localStorage.setItem("token", token); // Simpan token di localStorage
-
+      localStorage.setItem("firstName", first_name); // Simpan first_name di localStorage
+  
       // Ambil data dari token JWT
       const decodedToken = JSON.parse(atob(token.split(".")[1])); // Dekode payload JWT
       const { roleId } = decodedToken;
-
+  
       // Pengecekan role_id
       if (roleId === 3) {
         navigate("/"); // Arahkan ke halaman utama jika role_id = 3
@@ -41,6 +42,7 @@ const LoginForm = () => {
       setErrorMessage(data.message || "Login failed");
     }
   };
+  
   
 
 
@@ -55,7 +57,7 @@ const LoginForm = () => {
       </div>
       <div style={styles.formSection}>
         <h2 style={styles.title}>Log In | Investor</h2>
-        <p style={styles.subtitle}>Welcome back to Finest! Please login to your account</p>
+        <p style={styles.subtitle}>Bertemu lagi!, ayo masuk ke akun kamu!</p>
         <Breadcrumb style={styles.breadcrumb}>
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
           <Breadcrumb.Item active>Login</Breadcrumb.Item>
@@ -77,27 +79,27 @@ const LoginForm = () => {
           />
           <div style={styles.options}>
             <label style={styles.checkboxLabel}>
-              <input type="checkbox" style={styles.checkbox} /> Remember Me
+              <input type="checkbox" style={styles.checkbox} /> Ingat saya
             </label>
-            <a href="#" style={styles.link}>Forgot Password?</a>
+            <a href="#" style={styles.link}>Lupa password?</a>
           </div>
-          <button type="submit" style={styles.loginButton}>Login</button>
+          <button type="submit" style={styles.loginButton}>Masuk</button>
           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         </form>
         <p style={styles.footer}>
-          New User? <a href="#" style={styles.link} onClick={handleShowModal}>Sign In</a>
+          Pengguna baru? <a href="#" style={styles.link} onClick={handleShowModal}>Daftar</a>
         </p>
       </div>
 
       <Modal className="modal-xl" show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Sign In</Modal.Title>
+          <Modal.Title>Daftar</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Role />
         </Modal.Body>
         <Modal.Footer>
-          <span>Choose your role first, then lets dive in!</span>
+          <span>Pilih tipe akun kamu dulu, kemudian kita menyelam!</span>
         </Modal.Footer>
       </Modal>    
     </div>   

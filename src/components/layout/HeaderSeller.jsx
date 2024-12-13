@@ -8,6 +8,16 @@ export const HeaderSeller = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showModal, setShowModal] = useState(false); // State untuk modal
+  const [firstName, setUserName] = useState(""); // State untuk menyimpan nama pengguna
+  
+  // Mengambil firstName dari localStorage
+  useEffect(() => {
+    const firstName = localStorage.getItem("firstName");
+    if (firstName) {
+      setUserName(firstName);
+    }
+
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle state menu
@@ -15,6 +25,13 @@ export const HeaderSeller = () => {
 
   const handleCloseModal = () => setShowModal(false); // Menutup modal
   // const handleShowModal = () => setShowModal(true); // Menampilkan modal
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("firstName");
+    setUserName(""); // Hapus nama pengguna setelah logout
+    window.location.href = "/"; // Redirect ke halaman login
+  };
 
   useEffect(() => {
     // Menambahkan atau menghapus kelas .mobile-nav-active pada body sesuai dengan isMenuOpen
@@ -78,7 +95,7 @@ export const HeaderSeller = () => {
                 </li>
                 <li style={{ listStyle: "none", margin: "0", padding: "0" }}>
                   <NavDropdown
-                    title="Your Name"
+                    title={`Hi, ${firstName}!`}
                     id="collapsible-nav-dropdown"
                     style={{ padding: "0", display: "inline-block" }}
                   >
@@ -95,7 +112,7 @@ export const HeaderSeller = () => {
                     <NavDropdown.Item
                       // onClick={handleShowModal} // Menampilkan modal saat Sign In diklik
                       style={{ padding: "5px 10px", display: "block" }}
-                      href="/"
+                      onClick={handleLogout}
                     >
                       <i className="fa-solid fa-right-to-bracket" style={{ marginRight: "10px" }} />
                       Log Out
