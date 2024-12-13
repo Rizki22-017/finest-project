@@ -26,7 +26,7 @@ export const Role = () => {
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay={100}>
             <div
               className="service-item item-cyan position-relative"
-              onClick={() => handleRoleSelection(1)} // 1 = Investor
+              onClick={() => handleRoleSelection(3)} // 1 = Investor
             >
               <h3>Investor</h3>
               <i className="fa-solid fa-chart-line icon" />

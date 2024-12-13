@@ -2,31 +2,79 @@
 import { useState} from "react";
 import { Breadcrumb, Modal } from "react-bootstrap";
 import { Role } from "./Role";
+import { useNavigate } from "react-router-dom"; 
 
 const LoginForm = () => {
-  const [showModal, setShowModal] = useState(false); // State untuk modal
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    
+    const response = await fetch("http://localhost:3000/api/v1/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      const { token } = data;
+      localStorage.setItem("token", token); // Simpan token di localStorage
+
+      // Ambil data dari token JWT
+      const decodedToken = JSON.parse(atob(token.split(".")[1])); // Dekode payload JWT
+      const { roleId } = decodedToken;
+
+      // Pengecekan role_id
+      if (roleId === 2) {
+        navigate("/seller/dashboard"); // Arahkan ke halaman utama jika role_id = 3
+      } else {
+        setErrorMessage("Akun kamu tidak terdaftar sebagai fish farmer");
+      }
+    } else {
+      setErrorMessage(data.message || "Login failed");
+    }
+  };
   
+
+
+  const [showModal, setShowModal] = useState(false); // State untuk modal
 
   const handleCloseModal = () => setShowModal(false); // Menutup modal
   const handleShowModal = () => setShowModal(true); // Menampilkan modal
   return (
     <div style={styles.container}>
       <div style={styles.imageSection}>
-      <img src="/assets/img/login.png" alt="Gambar Login" style={styles.image}></img>     
-     </div>
+        <img src="/assets/img/login.png" alt="Gambar Login" style={styles.image}></img>     
+      </div>
       <div style={styles.formSection}>
-        <h2 style={styles.title}>Log In | Fish Farmers</h2>
-        <p style={styles.subtitle}>
-          Welcome back to Finest! Please login to your account
-        </p>
+        <h2 style={styles.title}>Log In | Fish Farmer</h2>
+        <p style={styles.subtitle}>Welcome back to Finest! Please login to your account</p>
         <Breadcrumb style={styles.breadcrumb}>
-              <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-              <Breadcrumb.Item active>Login</Breadcrumb.Item>
+          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+          <Breadcrumb.Item active>Login</Breadcrumb.Item>
         </Breadcrumb>
-        <form style={styles.form}>
-          <input type="email" placeholder="Email" style={styles.input} />
-          <input type="password" placeholder="Password" style={styles.input} />
+        <form style={styles.form} onSubmit={handleLogin}>
+          <input 
+            type="email" 
+            placeholder="Email" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={styles.input} 
+          />
+          <input 
+            type="password" 
+            placeholder="Password" 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={styles.input} 
+          />
           <div style={styles.options}>
             <label style={styles.checkboxLabel}>
               <input type="checkbox" style={styles.checkbox} /> Remember Me
@@ -34,14 +82,7 @@ const LoginForm = () => {
             <a href="#" style={styles.link}>Forgot Password?</a>
           </div>
           <button type="submit" style={styles.loginButton}>Login</button>
-          <button style={styles.googleButton}>
-            <img
-              src="/assets/img/google.png"
-              alt="Google"
-              style={styles.googleIcon}
-            />
-            Login with Google
-          </button>
+          {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         </form>
         <p style={styles.footer}>
           New User? <a href="#" style={styles.link} onClick={handleShowModal}>Sign In</a>
@@ -53,10 +94,10 @@ const LoginForm = () => {
           <Modal.Title>Sign In</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Role/>
+          <Role />
         </Modal.Body>
         <Modal.Footer>
-          <span>Choose your role first, then let&apos;s dive in!</span>
+          <span>Choose your role first, then lets dive in!</span>
         </Modal.Footer>
       </Modal>    
     </div>   
@@ -137,24 +178,6 @@ const styles = {
     borderRadius: '5px',
     cursor: 'pointer',
     marginBottom: '10px',
-  },
-  googleButton: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '10px',
-    fontSize: '16px',
-    backgroundColor: '#fff',
-    color: '#333',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    marginBottom: '20px',
-  },
-  googleIcon: {
-    width: '20px',
-    height: '20px',
-    marginRight: '10px',
   },
   footer: {
     fontSize: '14px',

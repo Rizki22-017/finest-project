@@ -98,7 +98,7 @@ const SignUp = () => {
               />
             </div>
             <div className="input-group" style={{cursor: "default", color: "green"}}>
-              <span>Kamu mendaftar sebagai {role_id === 1 ? 'Investor' : 'Fish Farmer'}</span>
+              <span>Kamu mendaftar sebagai {role_id === 3 ? 'Investor' : 'Fish Farmer'}</span>
             </div>
             <button type="submit" className="signup-btn">Sign Up</button>
             <button type="button" className="google-btn">
