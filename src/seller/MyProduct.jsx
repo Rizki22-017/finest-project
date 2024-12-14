@@ -34,7 +34,7 @@ export const MyProduct = () => {
       if (response.data.success) {
         // Jika berhasil menghapus, perbarui daftar produk
         setProducts(products.filter((product) => product.id !== productId));
-        alert("Produk berhasil dihapus");
+        //alert("Produk berhasil dihapus");
       }
     } catch (error) {
       console.error("Error deleting product:", error);

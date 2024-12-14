@@ -67,7 +67,7 @@ export const AddData = ({ handleCloseModal }) => {
 
       console.log(response.data); // Menampilkan respon dari server
       alert("Product added successfully!");
-      
+      window.location.reload();
       handleCloseModal();
     } catch (error) {
       console.error("Error adding product:", error);
