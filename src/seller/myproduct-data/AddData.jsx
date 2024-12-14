@@ -25,12 +25,14 @@ export const AddData = ({ handleCloseModal }) => {
 
    // Fungsi untuk menangani perubahan form
    const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
     setFormData({
-      ...formData,
-      [name]: value,
+        ...formData,
+        [name]: type === "number" ? (value !== "" ? parseFloat(value) : "") : value,
     });
-  };
+};
+
+  
 
   // Fungsi untuk menangani pemilihan file gambar
   const handleFileChange = (e) => {
@@ -176,7 +178,7 @@ export const AddData = ({ handleCloseModal }) => {
               </label>
               <input
                 className="form-control"
-                type="decimal"
+                type="number"
                 name="ponds_wide"
                 placeholder={1}
                 value={formData.ponds_wide}
@@ -190,7 +192,7 @@ export const AddData = ({ handleCloseModal }) => {
               </label>
               <input
                 className="form-control"
-                type="decimal"
+                type="number"
                 name="production_capacity"
                 placeholder={30.0}
                 value={formData.production_capacity}
@@ -204,7 +206,7 @@ export const AddData = ({ handleCloseModal }) => {
               </label>
               <input
                 className="form-control"
-                type="decimal"
+                type="number"
                 name="feed_cost"
                 placeholder={1000000}
                 value={formData.feed_cost}
@@ -218,7 +220,7 @@ export const AddData = ({ handleCloseModal }) => {
               </label>
               <input
                 className="form-control"
-                type="decimal"
+                type="number"
                 name="worker_cost"
                 placeholder={1000000}
                 value={formData.worker_cost}
@@ -232,7 +234,7 @@ export const AddData = ({ handleCloseModal }) => {
               </label>
               <input
                 className="form-control"
-                type="decimal"
+                type="number"
                 name="maintenance_cost"
                 placeholder={1000000}
                 value={formData.maintenance_cost}
@@ -246,7 +248,7 @@ export const AddData = ({ handleCloseModal }) => {
               </label>
               <input
                 className="form-control"
-                type="decimal"
+                type="number"
                 name="selling_price"
                 placeholder={1000000}
                 value={formData.selling_price}
@@ -260,7 +262,7 @@ export const AddData = ({ handleCloseModal }) => {
               </label>
               <input
                 className="form-control"
-                type="decimal"
+                type="number"
                 name="funds_managed"
                 placeholder='Data ini terhitung otomatis'
                 value={formData.funds_managed}
@@ -275,7 +277,7 @@ export const AddData = ({ handleCloseModal }) => {
               </label>
               <input
                 className="form-control"
-                type="decimal"
+                type="number"
                 name="estimated_income"
                 placeholder='Data ini terhitung otomatis'
                 value={formData.estimated_income}
@@ -290,7 +292,7 @@ export const AddData = ({ handleCloseModal }) => {
               </label>
               <input
                 className="form-control"
-                type="decimal"
+                type="number"
                 name="margin"
                 placeholder='Data ini terhitung otomatis'
                 value={formData.margin}

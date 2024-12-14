@@ -121,8 +121,8 @@ export const MyProduct = () => {
                         <td>{product.product_name}</td>
                         <td>{product.category_id}</td>
                         <td>Rp.{product.funds_managed}</td>
-                        <td>Rp.{product.margin}</td>
-                        <td>{product.estimated_income}</td>
+                        <td>{product.margin}%</td>
+                        <td>Rp.{product.estimated_income}</td>
                         <td className="text-center">
                           <form
                             action="#"
