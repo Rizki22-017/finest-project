@@ -3,7 +3,7 @@ import AOS from "aos";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
-export const AddData = ({ handleCloseModal }) => {
+export const EditData = ({ handleCloseModalEdit, productId }) => {
   const [categories, setCategories] = useState([]);
 
   const [formData, setFormData] = useState({
@@ -22,6 +22,22 @@ export const AddData = ({ handleCloseModal }) => {
     margin: "",
     product_pict: null,
   });
+
+  // Fetch product data for editing
+  const fetchProductData = async (productId) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/v1/product/${productId}`
+      );
+      setFormData(response.data.data);
+    } catch (error) {
+      console.error("Error fetching product data:", error);
+    }
+  };
+
+  useEffect(() =>{
+    fetchProductData(productId);
+  }, [productId]);
 
    // Fungsi untuk menangani perubahan form
    const handleInputChange = (e) => {
@@ -55,8 +71,8 @@ export const AddData = ({ handleCloseModal }) => {
     });
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/product", // Ganti dengan URL API Anda
+      const response = await axios.put(
+        `http://localhost:3000/api/v1/product/${productId}`, // Ganti dengan URL API Anda
         data,
         {
           headers: {
@@ -66,12 +82,12 @@ export const AddData = ({ handleCloseModal }) => {
       );
 
       console.log(response.data); // Menampilkan respon dari server
-      alert("Product added successfully!");
-      
-      handleCloseModal();
+      alert("Product updated successfully!");
+      window.location.reload();
+      handleCloseModalEdit();
     } catch (error) {
       console.error("Error adding product:", error);
-      alert("Failed to add product.");
+      alert("Failed to update product.");
     }
   };
 
@@ -97,7 +113,7 @@ export const AddData = ({ handleCloseModal }) => {
   
   return (
     <>
-      <section className="adddata section">
+      <section className="editdata section">
         <form
           onSubmit={handleSubmit}
           encType="multipart/form-data"
@@ -105,8 +121,8 @@ export const AddData = ({ handleCloseModal }) => {
         >
           <div className="row">
             <div className="mb-3">
-              <label htmlFor="exampleFormControlInput1" className="form-label">
-                Product Name Add
+              <label htmlFor="product_name" className="form-label">
+                Product Name
               </label>
               <input
                 className="form-control"
@@ -323,6 +339,7 @@ export const AddData = ({ handleCloseModal }) => {
   );
 };
 
-AddData.propTypes = {
-  handleCloseModal: PropTypes.func.isRequired, // Ensures handleCloseModal is a required function
+EditData.propTypes = {
+  handleCloseModalEdit: PropTypes.func.isRequired, // Ensures handleCloseModal is a required function
+  productId: PropTypes.string.isRequired,
 };

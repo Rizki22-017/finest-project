@@ -3,6 +3,9 @@ import AOS from "aos";
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { AddData } from "./myproduct-data/AddData";
+import axios from "axios";
+import { EditData } from "./myproduct-data/EditData";
+
 export const MyProduct = () => {
   useEffect(() => {
     AOS.init({
@@ -10,10 +13,49 @@ export const MyProduct = () => {
       once: true,
     });
   }, []);
+  
   const [showModal, setShowModal] = useState(false); // State untuk modal
+  const [showModalEdit, setShowModalEdit] = useState(false); // State untuk modal
+  const [products, setProducts] = useState([]); // State untuk menyimpan data produk
+  const [loading, setLoading] = useState(true); // State untuk loading
+  const [SelectedProduct, setSelectedProduct] = useState(null);
 
   const handleCloseModal = () => setShowModal(false); // Menutup modal
+  const handleCloseModalEdit = () => setShowModalEdit(false); // Menutup modal
   const handleShowModal = () => setShowModal(true); // Menampilkan modal
+  const handleShowModalEdit = (productId) => {
+    setSelectedProduct(productId);
+    setShowModalEdit(true);
+  };
+
+  const handleDelete = async (productId) => {
+    try {
+      const response = await axios.delete(`http://localhost:3000/api/v1/product/${productId}`);
+      if (response.data.success) {
+        // Jika berhasil menghapus, perbarui daftar produk
+        setProducts(products.filter((product) => product.id !== productId));
+        alert("Produk berhasil dihapus");
+      }
+    } catch (error) {
+      console.error("Error deleting product:", error);
+      alert("Gagal menghapus produk");
+    }
+  };
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/v1/product"); // URL backend
+        setProducts(response.data.data); // Update state dengan data produk
+        setLoading(false); // Selesai loading
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        setLoading(false); // Selesai loading meskipun error
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <>
@@ -54,80 +96,52 @@ export const MyProduct = () => {
                   </a>
                 </div>
               </div>
-              {/* Tabel User */}
-              <table className="table table-striped table-bordered text-center">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Fund Managed</th>
-                    <th scope="col">Margin</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Category</th>
-                    <th scope="col" className="text-center">
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Shrimp</td>
-                    <td>Rp.30.000.000</td>
-                    <td>Rp.2.500.000</td>
-                    <td>30</td>
-                    <td>Shrimp</td>
-                    <td className="text-center">
-                      <form
-                        action="#"
-                        method="POST"
-                        className="d-flex justify-content-center gap-2"
-                      >
-                        {/* <a className="btn btn-primary" href="#">
-                          View
-                        </a> */}
-                        <a className="btn btn-warning" href="#">
-                          Edit
-                        </a>
-                        <a className="btn btn-danger" href="#">
-                          Delete
-                        </a>
-                        {/* <button type="submit" className="btn btn-danger">
-                          Delete
-                        </button> */}
-                      </form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Fish</td>
-                    <td>Rp.30.000.000</td>
-                    <td>Rp.2.500.000</td>
-                    <td>30</td>
-                    <td>Sea Product</td>
-                    <td className="text-center">
-                      <form
-                        action="#"
-                        method="POST"
-                        className="d-flex justify-content-center gap-2"
-                      >
-                        {/* <a className="btn btn-primary" href="#">
-                          View
-                        </a> */}
-                        <a className="btn btn-warning" href="#">
-                          Edit
-                        </a>
-                        <a className="btn btn-danger" href="#">
-                          Delete
-                        </a>
-                        {/* <button type="submit" className="btn btn-danger">
-                          Delete
-                        </button> */}
-                      </form>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+               {/* Tabel User */}
+               {loading ? (
+                <p>Loading...</p> // Tampilkan loading jika data belum siap
+              ) : (
+                <table className="table table-striped table-bordered text-center">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Produk</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Dana Dikelola</th>
+                      <th scope="col">Margin</th>
+                      <th scope="col">Estimasi Pendapatan</th>
+                      <th scope="col" className="text-center">
+                        Aksi
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {products.map((product, index) => (
+                      <tr key={product.id}>
+                        <td>{index + 1}</td>
+                        <td>{product.product_name}</td>
+                        <td>{product.category_id}</td>
+                        <td>Rp.{product.funds_managed}</td>
+                        <td>Rp.{product.margin}</td>
+                        <td>{product.estimated_income}</td>
+                        <td className="text-center">
+                          <form
+                            action="#"
+                            method="POST"
+                            className="d-flex justify-content-center gap-2"
+                          >
+                            <a className="btn btn-warning" onClick={() => handleShowModalEdit(product.id)}>
+                              Edit
+                            </a>
+                            <a className="btn btn-danger" onClick={() => handleDelete(product.id)}>
+                              Hapus
+                            </a>
+                          </form>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
             </div>
           </div>
         </div>
@@ -142,6 +156,18 @@ export const MyProduct = () => {
         </Modal.Body>
         <Modal.Footer>
           <span>Tambahkan data produk kamu, biarkan uang mengalir kepadamu</span>
+        </Modal.Footer>
+      </Modal>
+      
+      <Modal className="modal-xl" show={showModalEdit} onHide={handleCloseModalEdit}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit data</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <EditData handleCloseModalEdit={handleCloseModalEdit} productId={SelectedProduct}/>
+        </Modal.Body>
+        <Modal.Footer>
+          <span>Edit data produk kamu, biarkan uang mengalir kepadamu</span>
         </Modal.Footer>
       </Modal>
     </>
