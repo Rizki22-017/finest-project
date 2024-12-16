@@ -42,7 +42,7 @@ export const CatalogDetail = () => {
           <h1>{product.product_name}</h1>
           <h3>
             {product.product_name}<br />
-            45, Merdeka Street - Palembang
+            {product.location}
           </h3>
           <p>
             Produk investasi ini memberikan peluang bagi para pelaku tambak dalam negeri untuk pengembangan usaha dan sebagai wadah untuk peningkatan angka partisipasi ekonomi biru
@@ -64,7 +64,7 @@ export const CatalogDetail = () => {
                     aria-selected="true"
                     role="tab"
                   >
-                    <b>Information</b>
+                    <b>Informasi</b>
                   </a>
                 </li>
                 <li>
@@ -76,7 +76,7 @@ export const CatalogDetail = () => {
                     tabIndex={-1}
                     role="tab"
                   >
-                    <b>Financial Statements</b>
+                    <b>Keuangan</b>
                   </a>
                 </li>
                 <li>
@@ -88,15 +88,15 @@ export const CatalogDetail = () => {
                     tabIndex={-1}
                     role="tab"
                   >
-                    <b>Refund</b>
+                    <b>Pengembalian</b>
                   </a>
                 </li>
               </ul>
               {/* End Tabs */}
               {/* Tab Content */}
               <div className="tab-content">
-                <Information />
-                <FinancialStatement />
+                <Information product={product}/>
+                <FinancialStatement product={product}/>
                 <Refund />
               </div>
             </div>
@@ -104,49 +104,37 @@ export const CatalogDetail = () => {
         </div>
       </section>
 
-      <section id="desc" className="desc section">
-        <div className="container">
-          <div className="row gy-3">
-            <div className="col-lg-12 d-flex flex-column justify-content-center">
-              <div className="desc-content ps-0 ps-lg-3">
-                <h3>Description</h3>
-                <p className="fst-italic">
-                  {product.desc}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section id="button-trigger" className="button-trigger container">
-        <button
-          type="button"
-          className="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-        >
-          Bayar Rp.{product.selling_price} Sekarang
-        </button>
-        {/* Modal */}
-        <div
-          className="modal fade"
-          id="staticBackdrop"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabIndex={-1}
-          aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog modal-xl">
-            <div className="modal-content">
-              <div className="modal-body">
-                <Payment />
-              </div>
-            </div>
-          </div>
+  <button
+    type="button"
+    className="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#paymentModal"
+  >
+    Bayar Sekarang
+  </button>
+
+  {/* Modal */}
+  <div
+    className="modal fade"
+    id="paymentModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabIndex={-1}
+    aria-labelledby="paymentModalLabel"
+    aria-hidden="true"
+  >
+    <div className="modal-dialog modal-xl">
+      <div className="modal-content">
+        <div className="modal-body">
+          <Payment />
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
     </>
   );
 };

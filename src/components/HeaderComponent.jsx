@@ -48,7 +48,7 @@ export const HeaderComponent = () => {
         <div className="branding d-flex align-items-center">
           <div className="container position-relative d-flex align-items-center justify-content-between">
             <a href="/" className="logo d-flex align-items-center">
-              <img src="assets/img/finest-logo.png" alt="Logo" />
+              <img src="/assets/img/finest-logo.png" alt="Logo" />
               <h1 className="sitename">Finest</h1>
             </a>
             <nav id="navmenu" className="navmenu">
@@ -58,7 +58,7 @@ export const HeaderComponent = () => {
                     to="/"
                     className={location.pathname === "/" ? "active" : ""}
                   >
-                    Home
+                    Beranda
                   </Link>
                 </li>
                 <li>
@@ -66,7 +66,7 @@ export const HeaderComponent = () => {
                     to="/catalog"
                     className={location.pathname === "/catalog" ? "active" : ""}
                   >
-                    Catalog
+                    Katalog
                   </Link>
                 </li>
                 <li>
@@ -82,7 +82,7 @@ export const HeaderComponent = () => {
                     to="/education"
                     className={location.pathname === "/education" ? "active" : ""}
                   >
-                    Article
+                    Artikel
                   </Link>
                 </li>
                 <li>
@@ -90,7 +90,7 @@ export const HeaderComponent = () => {
                     to="/about"
                     className={location.pathname === "/about" ? "active" : ""}
                   >
-                    About Us
+                    Tentang Kami
                   </Link>
                 </li>
 
@@ -107,14 +107,14 @@ export const HeaderComponent = () => {
                         style={{ padding: "5px 10px", display: "block" }}
                       >
                         <i className="fa-solid fa-right-to-bracket" style={{ marginRight: "10px" }} />
-                        Logout
+                        Keluar
                       </NavDropdown.Item>
                     </NavDropdown>
                   </li>
                 ) : (
                   <li style={{ listStyle: "none", margin: "0", padding: "0" }}>
                     <NavDropdown
-                      title="Login as"
+                      title="Masuk"
                       id="collapsible-nav-dropdown"
                       style={{ padding: "0", display: "inline-block" }}
                     >
@@ -145,7 +145,7 @@ export const HeaderComponent = () => {
                         style={{ padding: "5px 10px", display: "block" }}
                       >
                         <i className="fa-solid fa-right-to-bracket" style={{ marginRight: "10px" }} />
-                        Sign In
+                        Daftar
                       </NavDropdown.Item>
                     </NavDropdown>
                   </li>
@@ -164,13 +164,13 @@ export const HeaderComponent = () => {
       {/* Modal Sign In */}
       <Modal className="modal-xl" show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Sign In</Modal.Title>
+          <Modal.Title>Daftar</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Role/>
         </Modal.Body>
         <Modal.Footer>
-          <span>Choose your role first, then let&apos;s dive in!</span>
+          <span>Pilih tipe akun kamu, kemudian ayo kita menyelam!!</span>
         </Modal.Footer>
       </Modal>
     </>

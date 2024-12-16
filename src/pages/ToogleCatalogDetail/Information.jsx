@@ -1,45 +1,36 @@
+import PropTypes from "prop-types";
 
-
-export const Information = () => {
+export const Information = ({ product }) => {
   return (
     <>
       <div
-                  className="tab-pane fade show active"
-                  id="about-tab1"
-                  role="tabpanel"
-                >
-                  <div className="d-flex align-items-center">
-                    <i className="bi bi-check2" />
-                    <h4>
-                      Repudiandae rerum velit modi et officia quasi facilis
-                    </h4>
-                  </div>
-                  <p>
-                    Laborum omnis voluptates voluptas qui sit aliquam
-                    blanditiis. Sapiente minima commodi dolorum non eveniet
-                    magni quaerat nemo et.
-                  </p>
-                  <div className="d-flex align-items-center mt-4">
-                    <i className="bi bi-check2" />
-                    <h4>Incidunt non veritatis illum ea ut nisi</h4>
-                  </div>
-                  <p>
-                    Non quod totam minus repellendus autem sint velit. Rerum
-                    debitis facere soluta tenetur. Iure molestiae assumenda sunt
-                    qui inventore eligendi voluptates nisi at. Dolorem quo
-                    tempora. Quia et perferendis.
-                  </p>
-                  <div className="d-flex align-items-center mt-4">
-                    <i className="bi bi-check2" />
-                    <h4>Omnis ab quia nemo dignissimos rem eum quos..</h4>
-                  </div>
-                  <p>
-                    Eius alias aut cupiditate. Dolor voluptates animi ut
-                    blanditiis quos nam. Magnam officia aut ut alias quo
-                    explicabo ullam esse. Sunt magnam et dolorem eaque magnam
-                    odit enim quaerat. Vero error error voluptatem eum.
-                  </p>
-                </div>
+        className="tab-pane fade show active"
+        id="about-tab1"
+        role="tabpanel"
+      >
+        <div className="d-flex align-items-center">
+          <i className="bi bi-check2" />
+          <h4>Deskripsi Produk Investasi</h4>
+        </div>
+        <p>{product.desc}</p>
+        <div className="d-flex align-items-center mt-4">
+          <i className="bi bi-check2" />
+          <h4>Luas Kolam {product.ponds_wide} ha</h4>
+        </div>
+
+        <div className="d-flex align-items-center mt-4">
+          <i className="bi bi-check2" />
+          <h4>Kapasitas Produksi {product.production_capacity} kg/bln</h4>
+        </div>
+      </div>
     </>
   );
+};
+
+Information.propTypes = {
+  product: PropTypes.shape({
+    desc: PropTypes.string.isRequired,
+    ponds_wide: PropTypes.number.isRequired,
+    production_capacity: PropTypes.number.isRequired,
+  }).isRequired,
 };
