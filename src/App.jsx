@@ -18,17 +18,14 @@ import { Maintanance } from "./seller/Maintanance";
 import { Home } from "./pages/Home";
 
 function App() {
-  const location = useLocation(); // Mendapatkan path URL saat ini
+  const location = useLocation(); 
 
-  // Daftar route tanpa header dan footer
   const noHeaderFooterRoutes = ["/login", "/signin", "/login-fishfarmers"];
 
-  // Periksa apakah path saat ini adalah /seller/* atau tidak
   const isSellerRoute = location.pathname.startsWith("/seller");
 
   return (
     <>
-      {/* Tampilkan Header jika bukan di halaman login/signin atau seller */}
       {!noHeaderFooterRoutes.includes(location.pathname) && !isSellerRoute && <HeaderComponent />}
 
       <Routes>
@@ -47,7 +44,6 @@ function App() {
         <Route path="/error" element={<Maintanance />} />
       </Routes>
 
-      {/* Tampilkan Footer jika bukan di halaman login/signin atau seller */}
       {!noHeaderFooterRoutes.includes(location.pathname) && !isSellerRoute && <FooterComponent />}
     </>
   );

@@ -16,22 +16,22 @@ const SignUp = () => {
     password: '',
   });
 
-  // Handle input changes
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle form submission
+
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent page reload
+    e.preventDefault(); 
 
     try {
       const response = await axios.post('http://localhost:3000/api/v1/register', {
         ...formData,
         role_id
       });
-      alert(response.data.message); // Show success message
+      alert(response.data.message); 
 
       navigate('/login');
     } catch (error) {

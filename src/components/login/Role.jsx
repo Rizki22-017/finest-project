@@ -26,7 +26,7 @@ export const Role = () => {
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay={100}>
             <div
               className="service-item item-cyan position-relative"
-              onClick={() => handleRoleSelection(3)} // 1 = Investor
+              onClick={() => handleRoleSelection(3)} 
             >
               <h3>Investor</h3>
               <i className="fa-solid fa-chart-line icon" />
@@ -35,7 +35,7 @@ export const Role = () => {
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay={200}>
             <div
               className="service-item item-orange position-relative"
-              onClick={() => handleRoleSelection(2)} // 2 = Fish Farmers
+              onClick={() => handleRoleSelection(2)} 
             >
               <h3>Fish Farmers</h3>
               <i className="fa-solid fa-fish icon" />

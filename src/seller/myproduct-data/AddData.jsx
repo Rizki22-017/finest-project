@@ -23,7 +23,8 @@ export const AddData = ({ handleCloseModal }) => {
     product_pict: null,
   });
 
-   // Fungsi untuk menangani perubahan form
+   
+  
    const handleInputChange = (e) => {
     const { name, value, type } = e.target;
     setFormData({
@@ -34,7 +35,7 @@ export const AddData = ({ handleCloseModal }) => {
 
   
 
-  // Fungsi untuk menangani pemilihan file gambar
+
   const handleFileChange = (e) => {
     setFormData({
       ...formData,
@@ -42,12 +43,10 @@ export const AddData = ({ handleCloseModal }) => {
     });
   };
 
-  // Fungsi untuk mengirim data ke backend
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData();
 
-    // Menambahkan semua data ke FormData
     Object.keys(formData).forEach((key) => {
       if (key === "product_pict") {
         data.append(key, formData[key]);
@@ -58,16 +57,16 @@ export const AddData = ({ handleCloseModal }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/product", // Ganti dengan URL API Anda
+        "http://localhost:3000/api/v1/product", 
         data,
         {
           headers: {
-            "Content-Type": "multipart/form-data", // Pastikan header ini untuk mengirim file
+            "Content-Type": "multipart/form-data", 
           },
         }
       );
 
-      console.log(response.data); // Menampilkan respon dari server
+      console.log(response.data); 
       alert("Product added successfully!");
       window.location.reload();
       handleCloseModal();
@@ -87,7 +86,7 @@ export const AddData = ({ handleCloseModal }) => {
       try {
         const response = await axios.get("http://localhost:3000/api/v1/category");
         console.log(response.data);
-        setCategories(response.data.data); // Simpan data kategori
+        setCategories(response.data.data); 
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -326,5 +325,5 @@ export const AddData = ({ handleCloseModal }) => {
 };
 
 AddData.propTypes = {
-  handleCloseModal: PropTypes.func.isRequired, // Ensures handleCloseModal is a required function
+  handleCloseModal: PropTypes.func.isRequired, 
 };

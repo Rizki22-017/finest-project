@@ -20,7 +20,6 @@ export const Profile = () => {
     <div className="col-xl-4">
       <div className="card">
         <div className="card-body profile-card pt-4 d-flex flex-column align-items-center">
-          {/* <img src="assets/img/trainer-1-2.jpg" alt="Profile" class="rounded-circle"> */}
           <img
             src="/assets/img//team/team-1.jpg"
             className="rounded-circle"

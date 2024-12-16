@@ -14,15 +14,15 @@ export const MyProduct = () => {
     });
   }, []);
   
-  const [showModal, setShowModal] = useState(false); // State untuk modal
-  const [showModalEdit, setShowModalEdit] = useState(false); // State untuk modal
-  const [products, setProducts] = useState([]); // State untuk menyimpan data produk
-  const [loading, setLoading] = useState(true); // State untuk loading
+  const [showModal, setShowModal] = useState(false); 
+  const [showModalEdit, setShowModalEdit] = useState(false); 
+  const [products, setProducts] = useState([]); 
+  const [loading, setLoading] = useState(true); 
   const [SelectedProduct, setSelectedProduct] = useState(null);
 
-  const handleCloseModal = () => setShowModal(false); // Menutup modal
-  const handleCloseModalEdit = () => setShowModalEdit(false); // Menutup modal
-  const handleShowModal = () => setShowModal(true); // Menampilkan modal
+  const handleCloseModal = () => setShowModal(false); 
+  const handleCloseModalEdit = () => setShowModalEdit(false); 
+  const handleShowModal = () => setShowModal(true); 
   const handleShowModalEdit = (productId) => {
     setSelectedProduct(productId);
     setShowModalEdit(true);
@@ -32,9 +32,7 @@ export const MyProduct = () => {
     try {
       const response = await axios.delete(`http://localhost:3000/api/v1/product/${productId}`);
       if (response.data.success) {
-        // Jika berhasil menghapus, perbarui daftar produk
         setProducts(products.filter((product) => product.id !== productId));
-        //alert("Produk berhasil dihapus");
       }
     } catch (error) {
       console.error("Error deleting product:", error);
@@ -45,12 +43,12 @@ export const MyProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/product"); // URL backend
-        setProducts(response.data.data); // Update state dengan data produk
-        setLoading(false); // Selesai loading
+        const response = await axios.get("http://localhost:3000/api/v1/product"); 
+        setProducts(response.data.data); 
+        setLoading(false); 
       } catch (error) {
         console.error("Error fetching products:", error);
-        setLoading(false); // Selesai loading meskipun error
+        setLoading(false); 
       }
     };
 
@@ -77,15 +75,12 @@ export const MyProduct = () => {
           >
             <div className="card-body border" style={{ borderRadius: 10 }}>
               <div className="row d-flex justify-content-between align-items-center mb-3">
-                {/* Judul Card di Sebelah Kiri */}
                 <div className="col-auto">
                   <h3 className="card-title mb-0" style={{ marginTop: "30px" }}>
                     <b>Product Data</b>
                   </h3>
                 </div>
-                {/* Filter dan Tombol di Sebelah Kanan */}
                 <div className="col-auto d-flex align-items-center">
-                  {/* Tombol Masukan Data Baru */}
                   <a
                     className="btn btn-success"
                     href="#"
@@ -98,7 +93,7 @@ export const MyProduct = () => {
               </div>
                {/* Tabel User */}
                {loading ? (
-                <p>Loading...</p> // Tampilkan loading jika data belum siap
+                <p>Loading...</p> 
               ) : (
                 <table className="table table-striped table-bordered text-center">
                   <thead>

@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 export const Payment = () => {
-  const navigate = useNavigate(); // Untuk redirect setelah pembayaran
+  const navigate = useNavigate(); 
 
   const handlePayNow = () => {
     Swal.fire({
@@ -12,12 +12,10 @@ export const Payment = () => {
       showConfirmButton: false,
       timer: 2000,
     }).then(() => {
-      // Tutup modal secara otomatis
       const modal = document.querySelector("#paymentModal");
       const modalInstance = window.bootstrap.Modal.getInstance(modal);
       modalInstance.hide();
 
-      // Redirect ke halaman katalog
       navigate("/catalog");
     });
   };

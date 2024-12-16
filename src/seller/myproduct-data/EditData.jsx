@@ -23,7 +23,6 @@ export const EditData = ({ handleCloseModalEdit, productId }) => {
     product_pict: null,
   });
 
-  // Fetch product data for editing
   const fetchProductData = async (productId) => {
     try {
       const response = await axios.get(
@@ -39,7 +38,6 @@ export const EditData = ({ handleCloseModalEdit, productId }) => {
     fetchProductData(productId);
   }, [productId]);
 
-   // Fungsi untuk menangani perubahan form
    const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -48,7 +46,6 @@ export const EditData = ({ handleCloseModalEdit, productId }) => {
     });
   };
 
-  // Fungsi untuk menangani pemilihan file gambar
   const handleFileChange = (e) => {
     setFormData({
       ...formData,
@@ -56,12 +53,10 @@ export const EditData = ({ handleCloseModalEdit, productId }) => {
     });
   };
 
-  // Fungsi untuk mengirim data ke backend
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData();
 
-    // Menambahkan semua data ke FormData
     Object.keys(formData).forEach((key) => {
       if (key === "product_pict") {
         data.append(key, formData[key]);
@@ -72,16 +67,16 @@ export const EditData = ({ handleCloseModalEdit, productId }) => {
 
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/v1/product/${productId}`, // Ganti dengan URL API Anda
+        `http://localhost:3000/api/v1/product/${productId}`, 
         data,
         {
           headers: {
-            "Content-Type": "multipart/form-data", // Pastikan header ini untuk mengirim file
+            "Content-Type": "multipart/form-data", 
           },
         }
       );
 
-      console.log(response.data); // Menampilkan respon dari server
+      console.log(response.data); 
       alert("Product updated successfully!");
       window.location.reload();
       handleCloseModalEdit();
@@ -101,7 +96,7 @@ export const EditData = ({ handleCloseModalEdit, productId }) => {
       try {
         const response = await axios.get("http://localhost:3000/api/v1/category");
         console.log(response.data);
-        setCategories(response.data.data); // Simpan data kategori
+        setCategories(response.data.data); 
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -149,7 +144,7 @@ export const EditData = ({ handleCloseModalEdit, productId }) => {
                 {categories.length > 0 ? (
                   categories.map((category) => (
                     <option key={category.id} value={category.id}>
-                      {category.category} {/* Pastikan nama field di API sesuai */}
+                      {category.category} 
                     </option>
                   ))
                 ) : (
@@ -340,6 +335,6 @@ export const EditData = ({ handleCloseModalEdit, productId }) => {
 };
 
 EditData.propTypes = {
-  handleCloseModalEdit: PropTypes.func.isRequired, // Ensures handleCloseModal is a required function
+  handleCloseModalEdit: PropTypes.func.isRequired, 
   productId: PropTypes.string.isRequired,
 };

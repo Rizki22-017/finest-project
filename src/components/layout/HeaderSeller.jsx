@@ -7,10 +7,10 @@ import finestLogo from '../../assets/img/finest-logo.png';
 export const HeaderSeller = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showModal, setShowModal] = useState(false); // State untuk modal
-  const [firstName, setUserName] = useState(""); // State untuk menyimpan nama pengguna
+  const [showModal, setShowModal] = useState(false); 
+  const [firstName, setUserName] = useState(""); 
   
-  // Mengambil firstName dari localStorage
+  
   useEffect(() => {
     const firstName = localStorage.getItem("firstName");
     if (firstName) {
@@ -20,21 +20,21 @@ export const HeaderSeller = () => {
   }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle state menu
+    setIsMenuOpen(!isMenuOpen); 
   };
 
-  const handleCloseModal = () => setShowModal(false); // Menutup modal
-  // const handleShowModal = () => setShowModal(true); // Menampilkan modal
+  const handleCloseModal = () => setShowModal(false); 
+  
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("firstName");
-    setUserName(""); // Hapus nama pengguna setelah logout
-    window.location.href = "/"; // Redirect ke halaman login
+    setUserName(""); 
+    window.location.href = "/";
   };
 
   useEffect(() => {
-    // Menambahkan atau menghapus kelas .mobile-nav-active pada body sesuai dengan isMenuOpen
+    
     if (isMenuOpen) {
       document.body.classList.add("mobile-nav-active");
     } else {
@@ -110,7 +110,7 @@ export const HeaderSeller = () => {
                     
                     <NavDropdown.Divider />
                     <NavDropdown.Item
-                      // onClick={handleShowModal} // Menampilkan modal saat Sign In diklik
+                      // onClick={handleShowModal} 
                       style={{ padding: "5px 10px", display: "block" }}
                       onClick={handleLogout}
                     >

@@ -24,17 +24,17 @@ const LoginForm = () => {
     const data = await response.json();
   
     if (response.ok) {
-      const { token, first_name } = data; // Ambil first_name dari respons
-      localStorage.setItem("token", token); // Simpan token di localStorage
-      localStorage.setItem("firstName", first_name); // Simpan first_name di localStorage
+      const { token, first_name } = data; 
+      localStorage.setItem("token", token); 
+      localStorage.setItem("firstName", first_name); 
   
-      // Ambil data dari token JWT
-      const decodedToken = JSON.parse(atob(token.split(".")[1])); // Dekode payload JWT
+      
+      const decodedToken = JSON.parse(atob(token.split(".")[1])); 
       const { roleId } = decodedToken;
   
-      // Pengecekan role_id
+      
       if (roleId === 2) {
-        navigate("/seller/dashboard"); // Arahkan ke halaman utama jika role_id = 3
+        navigate("/seller/dashboard"); 
       } else {
         setErrorMessage("Akun kamu tidak terdaftar sebagai fish farmer");
       }
@@ -46,10 +46,10 @@ const LoginForm = () => {
   
 
 
-  const [showModal, setShowModal] = useState(false); // State untuk modal
+  const [showModal, setShowModal] = useState(false); 
 
-  const handleCloseModal = () => setShowModal(false); // Menutup modal
-  const handleShowModal = () => setShowModal(true); // Menampilkan modal
+  const handleCloseModal = () => setShowModal(false); 
+  const handleShowModal = () => setShowModal(true); 
   return (
     <div style={styles.container}>
       <div style={styles.imageSection}>

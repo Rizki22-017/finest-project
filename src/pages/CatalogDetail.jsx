@@ -7,22 +7,21 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const CatalogDetail = () => {
-  const { id } = useParams(); // Mengambil id dari URL
+  const { id } = useParams(); 
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const fetchProductDetail = async () => {
       try {
-        // Memastikan id digunakan dalam request
         const response = await axios.get(`http://localhost:3000/api/v1/product/${id}`);
-        setProduct(response.data.data); // Menyimpan data produk
+        setProduct(response.data.data); 
       } catch (error) {
         console.error("Error fetching product details", error);
       }
     };
 
     if (id) {
-      fetchProductDetail(); // Memanggil fungsi fetch jika id ada
+      fetchProductDetail(); 
     }
   }, [id]);
 
