@@ -32,7 +32,7 @@ function App() {
       {!noHeaderFooterRoutes.includes(location.pathname) && !isSellerRoute && <HeaderComponent />}
 
       <Routes>
-        <Route path="/catalog-detail" element={<CatalogDetail />} />
+        <Route path="/catalog-detail/:id" element={<CatalogDetail />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/login" element={<LoginForm />} />

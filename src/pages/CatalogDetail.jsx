@@ -2,25 +2,50 @@ import { FinancialStatement } from "./ToogleCatalogDetail/FinancialStatement";
 import { Information } from "./ToogleCatalogDetail/Information";
 import { Payment } from "./Payment";
 import { Refund } from "./ToogleCatalogDetail/Refund";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const CatalogDetail = () => {
+  const { id } = useParams(); // Mengambil id dari URL
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    const fetchProductDetail = async () => {
+      try {
+        // Memastikan id digunakan dalam request
+        const response = await axios.get(`http://localhost:3000/api/v1/product/${id}`);
+        setProduct(response.data.data); // Menyimpan data produk
+      } catch (error) {
+        console.error("Error fetching product details", error);
+      }
+    };
+
+    if (id) {
+      fetchProductDetail(); // Memanggil fungsi fetch jika id ada
+    }
+  }, [id]);
+
+  if (!product) {
+    return <div>Produk tidak ditemukan</div>;
+  }
+
   return (
     <>
       <section id="catdet" className="catdet section">
         <div className="container d-flex flex-column justify-content-center align-items-center text-center position-relative">
           <img
-            src="assets/img/udang.png"
+            src={`http://localhost:3000/${product.product_pict}`}
             className="img-fluid animated"
-            alt=""
+            alt="Product"
           />
-          <h1>Shrimp</h1>
+          <h1>{product.product_name}</h1>
           <h3>
-            Marina Fresh <br />
+            {product.product_name}<br />
             45, Merdeka Street - Palembang
           </h3>
           <p>
-            Fresh prawns harvested directly from sustainable farms. Suitable for
-            a variety of dishes and rich in essential nutrients.
+            Produk investasi ini memberikan peluang bagi para pelaku tambak dalam negeri untuk pengembangan usaha dan sebagai wadah untuk peningkatan angka partisipasi ekonomi biru
           </p>
         </div>
       </section>
@@ -70,12 +95,9 @@ export const CatalogDetail = () => {
               {/* End Tabs */}
               {/* Tab Content */}
               <div className="tab-content">
-                <Information/>
-                {/* End Tab 1 Content */}
-                <FinancialStatement/>
-                {/* End Tab 2 Content */}
-                <Refund/>
-                {/* End Tab 3 Content */}
+                <Information />
+                <FinancialStatement />
+                <Refund />
               </div>
             </div>
           </div>
@@ -83,55 +105,47 @@ export const CatalogDetail = () => {
       </section>
 
       <section id="desc" className="desc section">
-        <>
-          <div className="container">
-            <div className="row gy-3">
-              <div className="col-lg-12 d-flex flex-column justify-content-center">
-                <div className="desc-content ps-0 ps-lg-3">
-                  <h3>Description</h3>
-                  <p className="fst-italic">
-                    Our fresh prawns are harvested directly from sustainable
-                    farms and are quality guaranteed. These prawns have a soft
-                    texture and naturally sweet flavour, suitable for a variety
-                    of dishes. We ensure a safe packaging process to maintain
-                    the freshness and nutrition of the prawns until they reach
-                    you.
-                  </p>
-                </div>
+        <div className="container">
+          <div className="row gy-3">
+            <div className="col-lg-12 d-flex flex-column justify-content-center">
+              <div className="desc-content ps-0 ps-lg-3">
+                <h3>Description</h3>
+                <p className="fst-italic">
+                  {product.desc}
+                </p>
               </div>
             </div>
           </div>
-          
+        </div>
+      </section>
+
       <section id="button-trigger" className="button-trigger container">
-            {/* Button trigger modal */}
-            <button
-              type="button"
-              className="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              Pay Now
-            </button>
-            {/* Modal */}
-            <div
-              className="modal fade"
-              id="staticBackdrop"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              tabIndex={-1}
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog modal-xl">
-                <div className="modal-content">
-                  
-                  <div className="modal-body"><Payment/></div>
-                  
-                </div>
+        <button
+          type="button"
+          className="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          Bayar Rp.{product.selling_price} Sekarang
+        </button>
+        {/* Modal */}
+        <div
+          className="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabIndex={-1}
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-xl">
+            <div className="modal-content">
+              <div className="modal-body">
+                <Payment />
               </div>
             </div>
-          </section>
-        </>
+          </div>
+        </div>
       </section>
     </>
   );

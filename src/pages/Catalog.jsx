@@ -1,11 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
+import axiosInstance from "../api/axios";
 
 export const Catalog = () => {
+  const [products, setProducts] = useState([]); 
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
+    });
+
+    axiosInstance.get('product')
+    .then(response => {
+      setProducts(response.data.data);
+    })
+    .catch(error => {
+      console.error("Error fetching products: ", error);
     });
   }, []);
 
@@ -20,17 +31,16 @@ export const Catalog = () => {
           style={{ backgroundImage: "url(assets/img/dashboard.jpg)" }}
         >
           <div className="container position-relative">
-            <h1>Catalog Product</h1>
+            <h1>Katalog Produk</h1>
             <p>
-              Esse dolorum voluptatum ullam est sint nemo et est ipsa porro
-              placeat quibusdam quia assumenda numquam molestias.
+              Ayo pilih produk investasi kamu, kemudian mulailah jadi bagian dari penggerak ekonomi biru
             </p>
             <nav className="breadcrumbs">
               <ol>
                 <li>
-                  <a href="/">Home</a>
+                  <a href="/">Beranda</a>
                 </li>
-                <li className="current">Catalog Product</li>
+                <li className="current">Katalog Produk</li>
               </ol>
             </nav>
           </div>
@@ -57,126 +67,38 @@ export const Catalog = () => {
           </form>
           <div className="row gy-4" data-aos="fade-up">
             {/* Portfolio Item */}
-            <div className="col-lg-3 col-md-6 portfolio-item">
+            {products.map(product => (
+            <div className="col-lg-3 col-md-6 portfolio-item" key={product.id}>
               <div className="portfolio-content h-100">
                 <a
-                  href="/catalog-detail"
+                  href={`/catalog-detail/${product.id}`}
                   data-gallery="portfolio-gallery-app"
                   className="glightbox"
                 >
                   <img
-                    src="assets/img/2.png"
+                    src={`http://localhost:3000/${product.product_pict}`}
                     className="img-fluid"
                     alt=""
                   />
                 </a>
                 <div className="portfolio-info">
                   <h4>
-                    <a href="/catalog-detail" title="More Details">
-                      Shrimp Investment
+                    <a href={`/catalog-detail/${product.id}`} title="More Details">
+                      {product.product_name}
                     </a>
                   </h4>
                   <p>
                     {" "}
-                    <i className="fa-solid fa-store" /> OceanFresh
+                    <i className="fa-solid fa-store" /> {product.location}
                   </p>
                   <p style={{ marginTop: "5px" }}>
-                    <i className="fa-solid fa-star" /> 4.5
+                    <i className="fa-solid fa-rupiah-sign" /> {product.selling_price}
                   </p>
                 </div>
               </div>
             </div>
-            {/* End Portfolio Item */}
-            <div className="col-lg-3 col-md-6 portfolio-item">
-              <div className="portfolio-content h-100">
-                <a
-                  href="/catalog-detail"
-                  data-gallery="portfolio-gallery-app"
-                  className="glightbox"
-                >
-                  <img
-                    src="assets/img/1.png"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </a>
-                <div className="portfolio-info">
-                  <h4>
-                    <a href="/catalog-detail" title="More Details">
-                      Product 1
-                    </a>
-                  </h4>
-                  <p>
-                    {" "}
-                    <i className="fa-solid fa-store" /> OceanFresh
-                  </p>
-                  <p style={{ marginTop: "5px" }}>
-                    <i className="fa-solid fa-star" /> 4.5
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* End Portfolio Item */}
-            <div className="col-lg-3 col-md-6 portfolio-item">
-              <div className="portfolio-content h-100">
-                <a
-                  href="/catalog-detail"
-                  data-gallery="portfolio-gallery-app"
-                  className="glightbox"
-                >
-                  <img
-                    src="assets/img/3.png"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </a>
-                <div className="portfolio-info">
-                  <h4>
-                    <a href="/catalog-detail" title="More Details">
-                      Branding 1
-                    </a>
-                  </h4>
-                  <p>
-                    {" "}
-                    <i className="fa-solid fa-store" /> OceanFresh
-                  </p>
-                  <p style={{ marginTop: "5px" }}>
-                    <i className="fa-solid fa-star" /> 4.5
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* End Portfolio Item */}
-            <div className="col-lg-3 col-md-6 portfolio-item">
-              <div className="portfolio-content h-100">
-                <a
-                  href="/catalog-detail"
-                  data-gallery="portfolio-gallery-app"
-                  className="glightbox"
-                >
-                  <img
-                    src="assets/img/4.png"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </a>
-                <div className="portfolio-info">
-                  <h4>
-                    <a href="/catalog-detail" title="More Details">
-                      Branding 1
-                    </a>
-                  </h4>
-                  <p>
-                    {" "}
-                    <i className="fa-solid fa-store" /> OceanFresh
-                  </p>
-                  <p style={{ marginTop: "5px" }}>
-                    <i className="fa-solid fa-star" /> 4.5
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* End Portfolio Item */}
+            ))}
+            
             {/* Add more portfolio items similarly */}
           </div>
         </div>
