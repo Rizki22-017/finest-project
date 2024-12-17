@@ -127,7 +127,7 @@ export const CatalogDetail = () => {
     <div className="modal-dialog modal-xl">
       <div className="modal-content">
         <div className="modal-body">
-          <Payment />
+        <Payment product={product} />
         </div>
       </div>
     </div>

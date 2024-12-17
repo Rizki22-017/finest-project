@@ -1,23 +1,45 @@
+import { useState } from "react";
+import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export const Payment = () => {
+export const Payment = ({ product }) => {
+  const [investmentAmount, setInvestmentAmount] = useState('');
   const navigate = useNavigate(); 
 
-  const handlePayNow = () => {
-    Swal.fire({
-      icon: "success",
-      title: "Success",
-      text: "Pembayaran berhasil",
-      showConfirmButton: false,
-      timer: 2000,
-    }).then(() => {
-      const modal = document.querySelector("#paymentModal");
-      const modalInstance = window.bootstrap.Modal.getInstance(modal);
-      modalInstance.hide();
+  const handlePayNow = async () => {
+    try {
+      // Kirim data order ke server
+      await axios.post("http://localhost:3000/api/v1/order", {
+        product_id: product.id,
+        investment_amount: investmentAmount,
+      });
 
-      navigate("/catalog");
-    });
+      // Menampilkan sukses alert jika order berhasil
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Pembayaran berhasil",
+        showConfirmButton: false,
+        timer: 2000,
+      }).then(() => {
+        // Menutup modal
+        const modal = document.querySelector("#paymentModal");
+        const modalInstance = window.bootstrap.Modal.getInstance(modal);
+        modalInstance.hide();
+
+        // Mengarahkan pengguna ke halaman catalog
+        navigate("/catalog");
+      });
+    } catch (error) {
+      console.error("Error making order", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Terjadi kesalahan saat membuat order",
+      });
+    }
   };
 
   return (
@@ -25,10 +47,7 @@ export const Payment = () => {
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content p-4">
           <div className="modal-header border-0">
-            <h2
-              className="modal-title text-center w-100"
-              id="paymentModalLabel"
-            >
+            <h2 className="modal-title text-center w-100" id="paymentModalLabel">
               Detail Pembayaran
             </h2>
           </div>
@@ -38,11 +57,13 @@ export const Payment = () => {
             </p>
             <div className="input-group mb-4">
               <input
-                type="text"
+                type="number"
                 className="form-control text-center fs-5"
                 placeholder="Rp 500.000 ,00"
                 aria-label="Investment amount"
                 style={{ borderRadius: "10px", fontWeight: "500" }}
+                value={investmentAmount}
+                onChange={(e) => setInvestmentAmount(e.target.value)}
               />
             </div>
             <div className="row mb-4">
@@ -84,7 +105,7 @@ export const Payment = () => {
             </div>
             <div className="d-flex justify-content-between align-items-center">
               <h6>Total</h6>
-              <h6 className="fw-bold">Rp 500.000 ,00</h6>
+              <h6 className="fw-bold">Rp {investmentAmount}</h6>
             </div>
           </div>
           <div className="modal-footer border-0 d-flex justify-content-center flex-wrap">
@@ -108,4 +129,10 @@ export const Payment = () => {
       </div>
     </>
   );
+};
+
+Payment.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }).isRequired,
 };
