@@ -34,7 +34,7 @@ export const Finance = () => {
                   data-bs-toggle="tab"
                   data-bs-target="#features-tab-1"
                 >
-                  <h4>Disbursment</h4>
+                  <h4>Pencairan</h4>
                 </a>
               </li>
               {/* End tab nav item */}
@@ -44,7 +44,7 @@ export const Finance = () => {
                   data-bs-toggle="tab"
                   data-bs-target="#features-tab-2"
                 >
-                  <h4>Return</h4>
+                  <h4>Pengembalian</h4>
                 </a>
                 {/* End tab nav item */}
               </li>

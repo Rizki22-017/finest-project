@@ -16,15 +16,14 @@ export const AboutUs = () => {
               </div>
               <div className="col-lg-6  d-flex flex-column justify-content-center">
                 <h1>
-                  <span>About Us</span>
+                  <span>Kenalan yuk!</span>
                 </h1>
                 <p>
-                  We believe that the ocean is a precious resource and must be
-                  managed wisely for the sustainability of future generations
+                  Kami percaya bahwa lautan adalah sumber daya yang harus digunakan dengan bijak untuk masa depan yang berkelanjutan bagi generasi penerus kita. 
                 </p>
                 <div className="d-flex">
                   <a href="#about" className="btn-get-started">
-                    Get Started
+                    Meluncur
                   </a>
                   
                 </div>
@@ -65,7 +64,7 @@ export const AboutUs = () => {
           >
             {/* Section Title */}
             <div className="container section-title">
-              <h2>Our Story</h2>
+              <h2>Tentang Finest</h2>
             </div>
             {/* End Section Title */}
             <div className="container">
@@ -73,16 +72,7 @@ export const AboutUs = () => {
                 <div className="col-lg-12 d-flex flex-column justify-content-center">
                   <div className="aboutmore-content ps-0 ps-lg-3">
                     <p className="fst-italic">
-                      <b>Finest</b> was founded with a vision to empower coastal
-                      communities and support the sustainability of the blue
-                      economy. We believe that the ocean is a precious resource
-                      and must be managed wisely for the sustainability of
-                      future generations. Through education, innovation and
-                      collaboration, we strive to connect communities with the
-                      economic benefits of the sea, while preserving its
-                      sustainability. Our story is the story of a community
-                      working together to build a sustainable and prosperous
-                      future for all.
+                    <b>Finest</b> didirikan dengan visi untuk memberdayakan komunitas pesisir dan mendukung keberlanjutan ekonomi biru. Kami percaya bahwa laut adalah sumber daya yang berharga dan harus dikelola dengan bijak demi keberlanjutan generasi masa depan. Melalui pendidikan, inovasi, dan kolaborasi, kami berusaha menghubungkan komunitas dengan manfaat ekonomi dari laut, sambil menjaga keberlanjutannya. Cerita kami adalah cerita tentang sebuah komunitas yang bekerja bersama untuk membangun masa depan yang berkelanjutan dan sejahtera untuk semua.
                     </p>
                   </div>
                 </div>
@@ -96,11 +86,11 @@ export const AboutUs = () => {
         {/* Team Section */}
         <section id="team" className="team section light-background">
           {/* Section Title */}
-          <div className="container section-title">
-            <h2>Team</h2>
+          <div className="container section-title mb-4">
+            <h2>Tim Kami</h2>
             <p>
-              <span>Our Hardworking</span>{" "}
-              <span className="description-title">Meet Our Team</span>
+              
+              <span className="description-title">Kenalan sama kita yuk!</span>
             </p>
           </div>
           {/* End Section Title */}
@@ -300,10 +290,10 @@ export const AboutUs = () => {
         <section id="contact" className="contact section">
           {/* Section Title */}
           <div className="container section-title" >
-            <h2>Get in Touch</h2>
+            <h2>Ayo Tanyain!</h2>
             <p style={{marginBottom:"30px"}}>
-              <span>Need Help?</span>{" "}
-              <span className="description-title">Want to speak to someone about your startup? We’d love to chat!</span>
+              <span>Butuh bantuan?</span>{" "}
+              <span className="description-title">Ingin bertanya sesuatu yang kamu ragukan? dengan senang hati kami bantu!</span>
             </p>
           </div>
           {/* End Section Title */}
@@ -316,8 +306,8 @@ export const AboutUs = () => {
                   >
                     <i className="bi bi-geo-alt flex-shrink-0" />
                     <div>
-                      <h3>Address</h3>
-                      <p>Infinite Learning, Nongsa Digital Park, Batam City</p>
+                      <h3>Alamat</h3>
+                      <p>Infinite Learning, Nongsa Digital Park, Kota Batam</p>
                     </div>
                   </div>
                   {/* End Info Item */}
@@ -326,7 +316,7 @@ export const AboutUs = () => {
                   >
                     <i className="bi bi-telephone flex-shrink-0" />
                     <div>
-                      <h3>Call Us</h3>
+                      <h3>Hubungi Kami</h3>
                       <p>+628 1211111</p>
                     </div>
                   </div>
@@ -336,7 +326,7 @@ export const AboutUs = () => {
                   >
                     <i className="bi bi-envelope flex-shrink-0" />
                     <div>
-                      <h3>Email Us</h3>
+                      <h3>Email</h3>
                       <p>info@plis.com</p>
                     </div>
                   </div>
@@ -360,7 +350,7 @@ export const AboutUs = () => {
                   <div className="row gy-4">
                     <div className="col-md-6">
                       <label htmlFor="name-field" className="pb-2">
-                        Your Name
+                        Nama Kamu
                       </label>
                       <input
                         type="text"
@@ -372,7 +362,7 @@ export const AboutUs = () => {
                     </div>
                     <div className="col-md-6">
                       <label htmlFor="email-field" className="pb-2">
-                        Your Email
+                        Email
                       </label>
                       <input
                         type="email"
@@ -384,7 +374,7 @@ export const AboutUs = () => {
                     </div>
                     <div className="col-md-12">
                       <label htmlFor="subject-field" className="pb-2">
-                        Subject
+                        Subjek
                       </label>
                       <input
                         type="text"
@@ -396,7 +386,7 @@ export const AboutUs = () => {
                     </div>
                     <div className="col-md-12">
                       <label htmlFor="message-field" className="pb-2">
-                        Message
+                        Pesan
                       </label>
                       <textarea
                         className="form-control"
@@ -413,7 +403,7 @@ export const AboutUs = () => {
                       <div className="sent-message">
                         Your message has been sent. Thank you!
                       </div>
-                      <button type="submit">Send Message</button>
+                      <button type="submit">Kirim Pesan</button>
                     </div>
                   </div>
                 </form>

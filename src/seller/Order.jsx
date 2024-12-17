@@ -35,7 +35,7 @@ export const Order = () => {
                   data-bs-toggle="tab"
                   data-bs-target="#features-tab-1"
                 >
-                  <h4>Investment Contract</h4>
+                  <h4>Kontrak Investasi</h4>
                 </a>
               </li>
               {/* End tab nav item */}
@@ -55,7 +55,7 @@ export const Order = () => {
                   data-bs-toggle="tab"
                   data-bs-target="#features-tab-3"
                 >
-                  <h4>Profit Sharing</h4>
+                  <h4>Pembagian Profit</h4>
                 </a>
                 {/* End tab nav item */}
               </li>

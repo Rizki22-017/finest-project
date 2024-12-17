@@ -9,7 +9,7 @@ export const Tab1 = () => {
               data-aos="fade-up"
               data-aos-delay={100}
             >
-              <img src="/assets/img/services.jpg" alt="" />
+              <img src="/assets/img/udang.png" alt="" />
             </div>
             <div className="col-lg-6">
               <div
@@ -18,20 +18,13 @@ export const Tab1 = () => {
                 data-aos-delay={200}
               >
                 <div>
-                  <h4>Shrimp</h4>
-                  <p>1yrs Contract</p>
+                  <h4>Udang</h4>
+                  <p>1yrs Kontrak</p>
                   <p style={{ marginTop: "1rem", fontSize: "16px" }}>
-                    Description
+                    Deskripsi
                   </p>
                   <p style={{ fontSize: "16px" }}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ipsam architecto vitae possimus iure natus et obcaecati
-                    reprehenderit optio quod illum, ab harum aliquid ducimus
-                    repellendus nisi minima rerum blanditiis accusamus? Lorem
-                    ipsum dolor, sit amet consectetur adipisicing elit.
-                    Repudiandae similique ipsa nemo dolores praesentium sequi
-                    animi quis harum, perferendis libero deserunt quos iure
-                    neque numquam adipisci itaque hic pariatur ratione.
+                    Investasi ini merupakan investasi dalam bidang pertambakan udang dengan mengedepankan kualitas yang baik. Produk investasi ini dilakukan dalam kontrak tahunan dan margin menyesuaikan. Pertambakan ini terletak di kawasan strategis pasar sehingga memiliki daya saing tinggi. 
                   </p>
                 </div>
               </div>
@@ -54,7 +47,7 @@ export const Tab1 = () => {
                     </div>
                     <div className="member-info">
                       <h4>Assa Group</h4>
-                      <span>Lubuk Linggau, South Sumatera</span>
+                      <span>Lubuk Linggau, Sumatera Selatan</span>
                     </div>
                   </div>
                 </div>

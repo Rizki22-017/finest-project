@@ -27,12 +27,6 @@ export const Dashboard = () => {
               <h2 className="animate__animated animate__fadeInDown">
                 Welcome Assa Group!
               </h2>
-              <p className="animate__animated animate__fadeInUp">
-                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
-                est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus
-                repellendus deleniti vel. Minus et tempore modi architecto.
-              </p>
               <a
                 href="#features-details"
                 className="btn-get-started animate__animated animate__fadeInUp scrollto"
@@ -79,19 +73,18 @@ export const Dashboard = () => {
               <div className="content">
                 <h3>Assa Group</h3>
                 <p>
-                  Quidem qui dolore incidunt aut. In assumenda harum id iusto
-                  lorena plasico mares
+                  Bersenang senang dahulu, berakit-rakit kehulu. Bersakit-sakit dahulu, nanti kita ke penghulu.
                 </p>
                 <ul>
                   <li>
-                  <i className="fa-solid fa-location-dot" style={{marginRight:"15px"}}/> Location : South Sumatera
+                  <i className="fa-solid fa-location-dot" style={{marginRight:"15px"}}/> Lokasi : Sumatera Selatan
                   </li>
                   <li>
                   <i className="fa-solid fa-phone"/>{" "}
-                    Contact : +62821111111
+                    KOntak : +62821111111
                   </li>
                   <li>
-                  <i className="fa-solid fa-envelope" /> Email : example@gmail.com
+                  <i className="fa-solid fa-envelope" /> Email : assa@group.com
                   </li>
                 </ul>
                 <p />
@@ -103,9 +96,10 @@ export const Dashboard = () => {
               data-aos-delay={200}
             >
               <img
-                src="/assets/img/services.jpg"
+                src="/assets/img/3.png"
                 className="img-fluid"
                 alt=""
+                style={{objectFit: "cover", height: "600px", width: "auto",}}
               />
             </div>
           </div>
@@ -117,7 +111,7 @@ export const Dashboard = () => {
       <section id="portfolio" className="portfolio section light-background">
         {/* Section Title */}
         <div className="container section-title" data-aos="fade-up" style={{paddingTop:"60px", paddingBottom:"30px"}}>
-          <h2>Featured Products</h2>
+          <h2>Produk Terkait</h2>
           
         </div>
         {/* End Section Title */}
@@ -132,7 +126,7 @@ export const Dashboard = () => {
                   className="glightbox"
                 >
                   <img
-                    src="/assets/img/portfolio/app-1.jpg"
+                    src="/assets/img/2.png"
                     className="img-fluid"
                     alt=""
                   />
@@ -156,7 +150,7 @@ export const Dashboard = () => {
                   className="glightbox"
                 >
                   <img
-                    src="/assets/img/portfolio/product-1.jpg"
+                    src="/assets/img/3.png"
                     className="img-fluid"
                     alt=""
                   />
@@ -180,7 +174,7 @@ export const Dashboard = () => {
                   className="glightbox"
                 >
                   <img
-                    src="/assets/img/portfolio/branding-1.jpg"
+                    src="/assets/img/1.png"
                     className="img-fluid"
                     alt=""
                   />
@@ -204,7 +198,7 @@ export const Dashboard = () => {
                   className="glightbox"
                 >
                   <img
-                    src="/assets/img/portfolio/branding-1.jpg"
+                    src="/assets/img/4.png"
                     className="img-fluid"
                     alt=""
                   />

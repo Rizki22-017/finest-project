@@ -28,11 +28,11 @@ export const Tab2 = () => {
                   >
                     <div className="accordion-body">
                       <div className="container section-title">
-                        <h2 style={{ fontSize: "18px" }}>Return Detail</h2>
+                        <h2 style={{ fontSize: "18px" }}>Detail Pengembalian</h2>
                       </div>
 
                       <div className="card">
-                        <h5>Start</h5>
+                        <h5>Mulai</h5>
                         <p>August 2024</p>
                       </div>
 
@@ -113,12 +113,12 @@ export const Tab2 = () => {
                           className="resume-title"
                           style={{ fontSize: "18px" }}
                         >
-                          Return History
+                          Riwayat Pengembalian
                         </h3>
                         <div className="resume-item">
                           <div className="row">
                             <div className="col-8">
-                              <h4>First Payment Margin</h4>
+                              <h4>Pembayaran Margin</h4>
                             </div>
                             <div
                               className="col-4"
@@ -130,15 +130,15 @@ export const Tab2 = () => {
                               <h4 style={{color: "green", fontSize: "14px"}}>Success</h4>
                             </div>
                           </div>
-                          <p>Deadline</p>
-                          <span>January 1st 2025</span> <br />
+                          <p>Tenggat waktu</p>
+                          <span>1 Januari 2025</span> <br />
                           <h5>Rp. 650.000,-</h5>
                         </div>
                         {/* Edn Resume Item */}
                         <div className="resume-item">
                         <div className="row">
                             <div className="col-8">
-                              <h4>Second Payment Margin</h4>
+                              <h4>Pembayaran Margin</h4>
                             </div>
                             <div
                               className="col-4"
@@ -150,8 +150,8 @@ export const Tab2 = () => {
                               <h4 style={{color: "orange", fontSize: "14px"}}>Pending</h4>
                             </div>
                           </div>
-                          <p>Deadline</p>
-                          <span>January 1st 2025</span> <br />
+                          <p>Tenggat waktu</p>
+                          <span>1 Januari 2025</span> <br />
                           <h5>Rp. 650.000,-</h5>
                         </div>
                         {/* Edn Resume Item */}

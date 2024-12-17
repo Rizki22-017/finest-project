@@ -23,9 +23,10 @@ export const Tab3 = () => {
                 <div className="team-member d-flex align-items-start">
                   <div className="pic">
                     <img
-                      src="/assets/img/team/team-1.jpg"
+                      src="/assets/img/udang.png"
                       className="img-fluid"
                       alt=""
+                      style={{objectFit: "cover"}}
                     />
                   </div>
                   <div className="member-info" style={{ paddingTop: "1rem" }}>
@@ -37,7 +38,7 @@ export const Tab3 = () => {
                         className="fa-solid fa-location-dot"
                         style={{ marginRight: "10px" }}
                       ></i>
-                      Lubuk Linggau, South Sumatera
+                      Lubuk Linggau, Sumatera Selatan
                     </p>
                   </div>
                 </div>
@@ -67,7 +68,7 @@ export const Tab3 = () => {
               </div>
               <div className="countbtn" style={{ justifyContent: "center" }}>
                 <a href="#" className="btn">
-                  Count
+                  Hitung
                 </a>
               </div>
               {/* End Team Member */}

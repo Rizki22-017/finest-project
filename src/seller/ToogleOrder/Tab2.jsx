@@ -4,14 +4,14 @@ export const Tab2 = () => {
       <div className="tab2-order">
         <div className="order-fishfarm">
           <div className="card">
-            <h5>Funds Managed</h5>
+            <h5>Dana dikelola</h5>
             <p>Rp. 50.000.000,-</p>
           </div>
         </div>
 
         <div className="order-fishfarm">
           <div className="card">
-            <h5>Margin Accumulation</h5>
+            <h5>Akumulasi Margin</h5>
             <p>Rp. 2.500.000,-</p>
           </div>
         </div>
@@ -32,7 +32,7 @@ export const Tab2 = () => {
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        On Progress
+                        Berlangsung
                       </button>
                     </h2>
                     <div
@@ -57,7 +57,7 @@ export const Tab2 = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Waiting to Start
+                        Menunggu konfirmasi
                       </button>
                     </h2>
                     <div
@@ -93,7 +93,7 @@ export const Tab2 = () => {
                         aria-expanded="false"
                         aria-controls="collapseThree"
                       >
-                        Done
+                        Selesai
                       </button>
                     </h2>
                     <div
@@ -108,32 +108,32 @@ export const Tab2 = () => {
                           style={{ marginTop: "1rem" }}
                         >
                           <div className="resume-item">
-                            <h4>Shrimp</h4>
+                            <h4>Udang</h4>
                             <p style={{ marginTop: "0px" }}>Assa Group</p>
 
                             <div className="row">
                               <div className="col-4">
-                                <p>Funds Managed</p>
+                                <p>Dana Dikelola</p>
                                 <h5>Rp. 650.000,-</h5>
                               </div>
                               <div className="col-8">
-                                <p>Margin Earned</p>
+                                <p>Margin Didapatkan</p>
                                 <h5>Rp. 650.000,-</h5>
                               </div>
                             </div>
                           </div>
                           {/* Edn Resume Item */}
                           <div className="resume-item">
-                            <h4>Shrimp</h4>
+                            <h4>Udang</h4>
                             <p style={{ marginTop: "0px" }}>Assa Group</p>
 
                             <div className="row">
                               <div className="col-4">
-                                <p>Funds Managed</p>
+                                <p>Dana Dikelola</p>
                                 <h5>Rp. 650.000,-</h5>
                               </div>
                               <div className="col-8">
-                                <p>Margin Earned</p>
+                                <p>Margin Didapatkan</p>
                                 <h5>Rp. 650.000,-</h5>
                               </div>
                             </div>

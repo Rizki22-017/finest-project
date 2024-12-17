@@ -15,18 +15,19 @@ export const Tab1 = () => {
                   <div className="team-member d-flex align-items-start">
                     <div className="pic">
                       <img
-                        src="/assets/img/team/team-1.jpg"
+                        src="/assets/img/udang.png"
                         className="img-fluid"
                         alt=""
+                        style={{height:"150px", width: "100%"}}
                       />
                     </div>
                     <div className="member-info">
                       <h4>
-                        Shrimp
+                        Udang
                       </h4>
                       <span>Assa Group</span>
                       <p style={{fontSize: "17px", fontWeight: 700}}>
-                        Fund Received
+                        Dana Diterima
                       </p>
                       <p>
                         <b>
@@ -38,7 +39,7 @@ export const Tab1 = () => {
                         href="/education-detail"
                         className="readmore stretched-link"
                       >
-                        <span>Disbursed</span>
+                        <span>Cairkan</span>
                         <i className="bi bi-arrow-right"></i>
                       </a>
                     </div>
@@ -54,18 +55,19 @@ export const Tab1 = () => {
                   <div className="team-member d-flex align-items-start">
                     <div className="pic">
                       <img
-                        src="/assets/img/team/team-1.jpg"
+                        src="/assets/img/udang.png"
                         className="img-fluid"
                         alt=""
+                        style={{height:"150px", width: "100%"}}
                       />
                     </div>
                     <div className="member-info">
                       <h4>
-                        Shrimp
+                        Udang
                       </h4>
                       <span>Assa Group</span>
                       <p style={{fontSize: "17px", fontWeight: 700}}>
-                        Fund Received
+                        Dana Diterima
                       </p>
                       <p>
                         <b>
@@ -76,7 +78,7 @@ export const Tab1 = () => {
                         href="/education-detail"
                         className="readmore stretched-link"
                       >
-                        <span>Disbursed</span>
+                        <span>Cairkan</span>
                         <i className="bi bi-arrow-right"></i>
                       </a>
                     </div>
